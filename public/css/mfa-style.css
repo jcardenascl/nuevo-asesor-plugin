@@ -1,0 +1,104 @@
+/* public/css/mfa-style.css */
+.mfa-form-container {
+    border: 1px solid #ccd0d4; /* WordPress admin color */
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.mfa-form-container p {
+    margin-bottom: 15px;
+}
+
+.mfa-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3338;
+}
+
+.mfa-form-container input[type="text"],
+.mfa-form-container input[type="email"],
+.mfa-form-container input[type="url"],
+.mfa-form-container input[type="password"],
+.mfa-form-container select,
+.mfa-form-container textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 5px; /* Ajustado para mensajes de validación si los hubiera */
+    border: 1px solid #8c8f94;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #2c3338;
+    font-size: 14px;
+}
+
+.mfa-form-container input:focus,
+.mfa-form-container select:focus,
+.mfa-form-container textarea:focus {
+    border-color: #007cba; /* WordPress blue */
+    box-shadow: 0 0 0 1px #007cba;
+    outline: 2px solid transparent;
+}
+
+
+.mfa-form-container button[type="submit"] {
+    background-color: #007cba; /* WordPress primary button blue */
+    color: white;
+    padding: 8px 12px;
+    border: 1px solid #007cba;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: normal;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.mfa-form-container button[type="submit"]:hover,
+.mfa-form-container button[type="submit"]:focus {
+    background-color: #0071a1;
+    border-color: #0071a1;
+    color: white;
+}
+
+.mfa-form-container button[type="submit"]:disabled {
+    background-color: #a0a5aa; /* WordPress disabled color */
+    border-color: #a0a5aa;
+    color: #f0f0f1;
+    cursor: default;
+}
+
+.mfa-message {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.mfa-error-message {
+    color: #d63638; /* WordPress error red */
+    border-color: #d63638;
+    background-color: #fef2f2;
+}
+
+.mfa-success-message {
+    color: #006500; /* WordPress success green */
+    border-color: #207520;
+    background-color: #f0fff0;
+}
+
+#mfa-loading {
+    text-align: center;
+    padding: 15px;
+    font-style: italic;
+    color: #50575e; /* WordPress text color */
+    background-color: #f6f7f7;
+    border: 1px dashed #ccd0d4;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
