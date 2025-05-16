@@ -48,7 +48,7 @@ class MFA_API_Handler {
                 // según lo que espere tu API externa para la autenticación.
                 'username' => $this->api_options['api_username'] ?? '',
                 'password' => $this->api_options['api_password'] ?? '',
-                'rol': 'WP',
+                'rol' => 'WP',
             ];
 
             if ( empty($credentials['username']) || empty($credentials['password']) ) {

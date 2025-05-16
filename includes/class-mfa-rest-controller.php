@@ -144,16 +144,24 @@ class MFA_REST_Controller extends WP_REST_Controller {
         // IMPORTANTE: Transforma $response_data al formato { value: '...', label: '...' } si es necesario.
         // Si tu API externa ya devuelve este formato, no necesitas transformar.
         // Ejemplo de transformación:
-        // $formatted_options = [];
-        // if (is_array($response_data) && isset($response_data['items'])) { // Suponiendo que la API devuelve { "items": [ { "id": 1, "name": "Ciudad A" } ] }
-        //     foreach ($response_data['items'] as $item) {
-        //         $formatted_options[] = [
-        //             'value' => $item['id'],
-        //             'label' => $item['name'],
-        //         ];
-        //     }
-        // } else { return new WP_Error('api_data_format_error', __('Formato inesperado de datos de la API externa.','mi-formulario-api'), ['status' => 500]); }
-        // return new WP_REST_Response( $formatted_options, 200 );
+        $formatted_options = [];
+        if (is_array($response_data) && isset($response_data['data'])) { // Suponiendo que la API devuelve { "items": [ { "id": 1, "name": "Ciudad A" } ] }
+            foreach ($response_data['data'] as $item) {
+                $formatted_options[] = [
+                    'value' => $item['id'],
+                    'label' => $item['nombre'],
+                ];
+            }
+        } else if (is_array($response_data) && isset($response_data['results'])) { // Suponiendo que la API devuelve { "items": [ { "id": 1, "name": "Ciudad A" } ] }
+            foreach ($response_data['results'] as $item) {
+                $formatted_options[] = [
+                    'value' => $item['id'],
+                    'label' => $item['nombre'],
+                ];
+            }
+        }
+        else { return new WP_Error('api_data_format_error', __('Formato inesperado de datos de la API externa.','mi-formulario-api'), ['status' => 500]); }
+        return new WP_REST_Response( $formatted_options, 200 );
 
         // Si la API ya devuelve el formato correcto (array de {value, label}):
         if ( ! is_array( $response_data ) ) {

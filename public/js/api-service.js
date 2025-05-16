@@ -48,10 +48,10 @@ async function submitFormData(formDataObject) {
         const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/json',
                 'X-WP-Nonce': nonce,
             },
-            body: JSON.stringify(formDataObject),
+            body: formDataObject,
         });
 
         const data = await response.json(); // Intenta parsear JSON siempre

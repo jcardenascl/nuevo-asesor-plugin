@@ -12,7 +12,10 @@ function domReady(fn) {
 domReady(() => {
     // Solo inicializar si el contenedor del formulario existe
     // Usamos getElementById de form-handler.js indirectamente, pero aquí una comprobación general es buena.
-    if (document.getElementById('mfa-form-container')) {
+
         initializeForm();
+    if (document.getElementById('mfa-form-container')) {
+        // console.log('domReady');
+
     }
 });

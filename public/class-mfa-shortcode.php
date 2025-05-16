@@ -10,6 +10,7 @@ class MFA_Shortcode {
     public function __construct() {
         add_shortcode( self::SHORTCODE_TAG, [ $this, 'render_form_shortcode' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts_styles' ] );
+        add_filter( 'script_loader_tag', [ $this, 'add_module_type_attribute' ], 10, 3 );
     }
 
     public function enqueue_scripts_styles() {
@@ -93,5 +94,19 @@ class MFA_Shortcode {
         ob_start();
         require MFA_PLUGIN_DIR . 'public/views/form-template.php';
         return ob_get_clean();
+    }
+
+    public function add_module_type_attribute( $tag, $handle, $src ) {
+        $module_handles = [
+            'mfa-api-service',
+            'mfa-form-handler',
+            'mfa-main-js'
+        ];
+        
+        if ( in_array( $handle, $module_handles ) ) {
+            $tag = str_replace( '<script', '<script type="module"', $tag );
+        }
+        
+        return $tag;
     }
 }
