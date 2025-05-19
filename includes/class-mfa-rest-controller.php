@@ -56,39 +56,101 @@ class MFA_REST_Controller extends WP_REST_Controller {
      */
     public function get_form_submit_args() {
         return [
-            'nombre' => [
-                'required'          => true,
-                'type'              => 'string',
-                'description'       => __('Nombre del usuario.', 'mi-formulario-api'),
-                'sanitize_callback' => 'sanitize_text_field',
+            'datos_personales' => [
+                'required' => true,
+                'type' => 'string',
+                'description' => 'JSON con información personal',
+                'validate_callback' => function($value) {
+                    return $this->is_valid_json($value, [
+                        'nombre' => 'string',
+                        'tipo_documento' => 'string',
+                        'numero_documento' => 'string',
+                        'coordinacion' => 'string'
+                    ]);
+                }
             ],
-            'email' => [
-                'required'          => true,
-                'type'              => 'string',
-                'format'            => 'email',
-                'description'       => __('Email del usuario.', 'mi-formulario-api'),
-                'sanitize_callback' => 'sanitize_email',
+            'datos_conyuge' => [
+                'required' => true,
+                'type' => 'string',
+                'validate_callback' => function($value) {
+                    return $this->is_valid_json($value, [
+                        'nombre' => 'string',
+                        'tipo_documento' => 'string',
+                        'numero_documento' => 'string'
+                    ]);
+                }
             ],
-            'tipo_documento' => [ // Corresponde al name del select en el form
-                'required'          => false, // O true si es obligatorio
-                'type'              => 'string', // O integer si los values son numéricos
-                'description'       => __('Tipo de documento seleccionado.', 'mi-formulario-api'),
-                'sanitize_callback' => 'sanitize_text_field', // O 'absint' si es numérico
+            'datos_apoderado' => [
+                'required' => true,
+                'type' => 'string',
+                'validate_callback' => 'rest_is_valid_json'
             ],
-            'ciudad_id' => [ // Corresponde al name del select en el form
-                'required'          => false,
-                'type'              => 'string', // O integer
-                'description'       => __('Ciudad seleccionada.', 'mi-formulario-api'),
-                'sanitize_callback' => 'sanitize_text_field', // O 'absint'
+            'actividad_economica_asalariado' => [
+                'required' => true,
+                'type' => 'string',
+                'validate_callback' => function($value) {
+                    return $this->is_valid_json($value, [
+                        'empresa' => 'string',
+                        'ingresos_mensuales' => 'numeric'
+                    ]);
+                }
             ],
-            'mensaje' => [
-                'required'          => false,
-                'type'              => 'string',
-                'description'       => __('Mensaje del usuario.', 'mi-formulario-api'),
-                'sanitize_callback' => 'sanitize_textarea_field',
+            'informacion_financiera' => [
+                'required' => true,
+                'type' => 'string',
+                'validate_callback' => function($value) {
+                    $data = json_decode($value, true);
+                    return is_numeric($data['ingresos_mensuales'] ?? null);
+                }
             ],
-            // Añade más campos aquí según tu formulario
-        ];
+            'declaracion_origen_fondos' => [
+                'required' => true,
+                'type' => 'string',
+                'validate_callback' => function($value) {
+                    return $this->is_valid_json($value, [
+                        'fuente_fondos' => 'string',
+                        'descripcion_fondos' => 'string'
+                    ]);
+                }
+            ],
+            'actividad_operaciones_internacionales' => [
+                'required' => true,
+                'type' => 'string',
+                'validate_callback' => function($value) {
+                    $data = json_decode($value, true);
+                    return isset($data['realiza_operaciones']) && is_bool($data['realiza_operaciones']);
+                }
+            ],
+            'personas_peps' => [
+                'required' => true,
+                'type' => 'string',
+                'validate_callback' => function($value) {
+                    return $this->is_valid_json($value, [
+                        'maneja_recursos_publicos' => 'boolean',
+                        'ejerce_poder_publico' => 'boolean'
+                    ]);
+                }
+            ]
+        ];  
+    }
+
+    private function is_valid_json($value, $structure) {
+        $data = json_decode($value, true);
+        if (json_last_error() !== JSON_ERROR_NONE) return false;
+        
+        foreach ($structure as $key => $type) {
+            if (!array_key_exists($key, $data)) return false;
+            
+            $valid = match($type) {
+                'string' => is_string($data[$key]),
+                'numeric' => is_numeric($data[$key]),
+                'boolean' => is_bool($data[$key]),
+                default => true
+            };
+            
+            if (!$valid) return false;
+        }
+        return true;
     }
 
 
@@ -186,6 +248,15 @@ class MFA_REST_Controller extends WP_REST_Controller {
             return new WP_Error( 'missing_payload', __( 'No se recibieron datos en el formulario.', 'mi-formulario-api' ), [ 'status' => 400 ] );
         }
 
+        $validation = validate_simple_api_request();
+            
+        if (is_wp_error($validation)) {
+            return new WP_REST_Response([
+                'error' => true,
+                'messages' => $validation->get_error_messages()
+            ], 400);
+        }
+
         // IMPORTANTE: Ajusta 'form/submit-endpoint' al endpoint real de tu API externa para enviar datos.
         $external_api_endpoint = 'api/fabrica/asesor_wordpress/crear_asesor_';
 
@@ -204,5 +275,81 @@ class MFA_REST_Controller extends WP_REST_Controller {
             'message' => $success_message,
             'api_response' => $response_data // Opcional: devolver la respuesta completa de la API
         ], 200 );
+    }
+
+    public function validate_simple_api_request() {
+        $errors = new WP_Error();
+
+        // Parámetros JSON requeridos
+        $required_params = [
+            'datos_personales',
+            'datos_conyuge',
+            'datos_apoderado',
+            'actividad_economica_asalariado',
+            'informacion_financiera',
+            'declaracion_origen_fondos',
+            'actividad_operaciones_internacionales',
+            'personas_peps'
+        ];
+
+        // Validar existencia y formato JSON de los parámetros
+        foreach ($required_params as $param) {
+            if (!isset($_POST[$param])) {
+                $errors->add($param, "Parámetro $param faltante");
+                continue;
+            }
+
+            $decoded = json_decode($_POST[$param], true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                $errors->add($param, "Formato JSON inválido en $param");
+            }
+        }
+
+        // Validación básica de datos personales
+        if (isset($_POST['datos_personales'])) {
+            $dp = json_decode($_POST['datos_personales'], true);
+            
+            $required_fields = [
+                'nombre', 'tipo_documento', 'numero_documento', 'coordinacion',
+                'fecha_expedicion', 'lugar_expedicion', 'lugar_nacimiento',
+                'fecha_nacimiento', 'direccion', 'telefono', 'correo'
+            ];
+
+            foreach ($required_fields as $field) {
+                if (empty($dp[$field])) {
+                    $errors->add('datos_personales', "Campo requerido: $field");
+                }
+            }
+
+            // Validar valores permitidos
+            $allowed = [
+                'tipo_documento' => ['C.C.', 'T.I.', 'C.E.', 'Pasaporte'],
+                'estado_civil' => ['Soltero', 'Casado', 'Viudo', 'Divorciado', 'Unión Libre'],
+                'tipo_cuenta' => ['ahorro', 'corriente']
+            ];
+
+            foreach ($allowed as $field => $values) {
+                if (isset($dp[$field]) && !in_array($dp[$field], $values)) {
+                    $errors->add('datos_personales', "Valor no permitido en $field");
+                }
+            }
+        }
+
+        // Validar archivos requeridos
+        $required_files = [
+            'cert_bancaria_ext',
+            'ref_comercial_laboral',
+            'fotocopia_rut',
+            'hoja_vida',
+            'doc_identidad_150'
+        ];
+
+        foreach ($required_files as $file) {
+            if (empty($_FILES[$file]) || $_FILES[$file]['error'] !== UPLOAD_ERR_OK) {
+                $errors->add($file, "Archivo requerido: $file");
+            }
+        }
+
+        return $errors->has_errors() ? $errors : true;
     }
 }
