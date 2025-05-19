@@ -241,6 +241,7 @@ function populateSelect(selectId, optionsData) {
         });
         document.querySelector(`[data-step="${step}"]`).classList.add('active-step');
         setLoadingState(false);
+        hideMessages();
         return;
     }
 
@@ -263,6 +264,7 @@ function populateSelect(selectId, optionsData) {
                 
                 setLoadingState(true);
                 hideMessages();
+
 
                 try {
                     console.log('Initializing form, select data will be fetched via WP REST API.');
@@ -506,11 +508,17 @@ function populateSelect(selectId, optionsData) {
             formData.append('personas_peps', JSON.stringify(personasPEPs));
 
             // Archivos
+            // const fileInputs = [
+            //     'cert_bancaria_ext', 'nss_doc_identidad', 'cert_bancaria',
+            //     'ref_comercial_laboral', 'cert_universitarios', 'fotocopia_rut',
+            //     'hoja_vida', 'doc_identidad_150'
+            // ];
             const fileInputs = [
-                'cert_bancaria_ext', 'nss_doc_identidad', 'cert_bancaria',
-                'ref_comercial_laboral', 'cert_universitarios', 'fotocopia_rut',
+                'cert_bancaria_ext',
+                'ref_comercial_laboral', 'fotocopia_rut',
                 'hoja_vida', 'doc_identidad_150'
             ];
+
 
             fileInputs.forEach(inputId => {
                 const input = document.getElementById(inputId);

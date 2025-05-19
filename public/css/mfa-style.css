@@ -23,6 +23,8 @@
 .mfa-form-container input[type="email"],
 .mfa-form-container input[type="url"],
 .mfa-form-container input[type="password"],
+.mfa-form-container input[type="tel"],
+.mfa-form-container input[type="number"],
 .mfa-form-container select,
 .mfa-form-container textarea {
     width: 100%;
