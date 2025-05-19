@@ -101,7 +101,6 @@ function populateSelect(selectId, optionsData) {
 }
 
     async function initializeForm() {
-        console.log('init');
         setLoadingState(true);
         hideMessages();
 
@@ -110,11 +109,9 @@ function populateSelect(selectId, optionsData) {
         console.log('formElement', formElement);
         
         if (!formElement) return; // No hay formulario en esta página
-        console.log('dont return');
         
         document.querySelectorAll('.js-next-step').forEach(btn => {
             btn.addEventListener('click', () => nextStep(currentStep + 1));
-            console.log('js-next-step');
         });
         document.querySelectorAll(PREV_BTN).forEach(btn => {
             btn.addEventListener('click', () => prevStep(currentStep - 1));
@@ -255,7 +252,7 @@ function populateSelect(selectId, optionsData) {
 
             // Actualiza campos según tipo de persona
             if (currentStep === 2) {
-                const tipo = document.getElementById('tipoPersona').value;
+                const tipo = checkTipoPersona();
                 document.getElementById('naturalFields').style.display =
                     tipo === 'natural' ? 'block' : 'none';
                 document.getElementById('juridicaFields').style.display =
@@ -279,8 +276,10 @@ function populateSelect(selectId, optionsData) {
 
                     
 
-                //     // const select2Data = await fetchSelectOptions('opciones_ciudad'); // Cambia 'opciones_ciudad'
-                //     // populateSelect('mfa-opcion-api-2', select2Data);
+                const select2Data = await fetchSelectOptions('opciones_ciudad'); // Cambia 'opciones_ciudad'
+                populateSelect('natural_lugar_expedicion', select2Data);
+                populateSelect('natural_lugar_nacimiento', select2Data);
+                populateSelect('natural_apoderado_lugar_expedicion', select2Data);
 
                 //     // ...cargar más selects si es necesario
                 const select3Data = await fetchSelectOptions('opciones_coord_comercial');
@@ -296,14 +295,14 @@ function populateSelect(selectId, optionsData) {
             }
             // Actualiza campos según tipo de persona
             if (currentStep === 3) {
-                const tipo = document.getElementById('tipoPersona').value;
+                const tipo = checkTipoPersona();
                 document.getElementById('naturalFields3').style.display =
                     tipo === 'natural' ? 'block' : 'none';
                 document.getElementById('juridicaFields3').style.display =
                     tipo === 'juridica' ? 'block' : 'none';
             }
             if (currentStep === 4) {
-                const tipo = document.getElementById('tipoPersona').value;
+                const tipo = checkTipoPersona();
                 document.getElementById('naturalFields4').style.display =
                     tipo === 'natural' ? 'block' : 'none';
                 document.getElementById('juridicaFields4').style.display =
@@ -323,40 +322,47 @@ function populateSelect(selectId, optionsData) {
         return Array.from(opciones).some(opcion => opcion.checked);
     }
 
+    function checkTipoPersona() {
+        return document.getElementById('tipoPersona').value;
+    }
+
     function validateStep(step) {
         let isValid = true;
         document.getElementById('errorMessages').innerHTML = '';
 
         switch (step) {
             case 1:
-                const tipo = document.getElementById('tipoPersona').value;
-                if (!tipo) {
+                if (!checkTipoPersona()) {
                     showError('Seleccione un tipo de persona');
                     isValid = false;
                 }
                 break;
 
             case 2:
-                const inputs = document.querySelectorAll('[data-step="2"] input');
+                const inputs = document.querySelectorAll('[data-step="2"] [required]:not([disabled]):not([type="hidden"])');                
                 inputs.forEach(input => {
                     if (input.offsetParent !== null && !input.value) {
-                        showError('Complete todos los campos ' + input.placeholder);
+                        showError('Complete todos los campos requeridos ' + input.placeholder);
                         isValid = false;
                     }
                 });
                 break;
             case 3:
-                if (!verificarSeleccionActividad()) {
-                    alert("Debe seleccionar una actividad económica");
-                    showError('Complete todos los campos ' + input.placeholder);
-                    isValid = false;
-                    return;
+                if (checkTipoPersona() === 'natural') {
+                    if (!verificarSeleccionActividad()) {
+                        alert("Debe seleccionar una actividad económica");
+                        showError('Complete todos los campos requeridos ' + input.placeholder);
+                        isValid = false;
+                        return;
+                    }                    
                 }
 
-                const inputs3 = document.querySelectorAll('[data-step="3"] input');
+
+                const inputs3 = document.querySelectorAll('[data-step="3"] [required]:not([disabled]):not([type="hidden"])');                
+
                 inputs3.forEach(input => {
                     if (input.offsetParent !== null && !input.value) {
-                        showError('Complete todos los campos');
+                        showError('Complete todos los campos requeridos');
                         isValid = false;
                     }
                 });
@@ -371,8 +377,7 @@ function populateSelect(selectId, optionsData) {
 
     function validateFileInputs() {
         let isValid = true;
-        const tipo = document.getElementById('tipoPersona').value;
-        const container = tipo === 'natural' ? '#naturalFields4 ' : '#juridicaFields4 ';
+        const container = checkTipoPersona() === 'natural' ? '#naturalFields4 ' : '#juridicaFields4 ';
 
 
         document.querySelectorAll(container + 'input[type="file"][required]').forEach(input => {
@@ -396,7 +401,7 @@ function populateSelect(selectId, optionsData) {
 
     function buildFormData() {
         const formData = new FormData();
-        const tipoPersona = document.getElementById('tipoPersona').value;
+        const tipoPersona = checkTipoPersona();
 
         if (tipoPersona === 'natural') {
             // Datos Personales
@@ -407,6 +412,7 @@ function populateSelect(selectId, optionsData) {
                 coordinacion: document.getElementById('natural_coordinacion').value,
                 fecha_expedicion: document.getElementById('natural_fecha_expedicion').value,
                 lugar_expedicion: document.getElementById('natural_lugar_expedicion').value,
+                lugar_nacimiento: document.getElementById('natural_lugar_nacimiento').value,
                 fecha_nacimiento: document.getElementById('natural_fecha_nacimiento').value,
                 direccion: document.getElementById('natural_direccion').value,
                 telefono: document.getElementById('natural_telefono').value,
@@ -418,7 +424,8 @@ function populateSelect(selectId, optionsData) {
                 tipo_cuenta: document.getElementById('natural_tipo_cuenta').value,
                 banco: document.getElementById('natural_banco').value,
                 tipo_vivienda: document.getElementById('natural_tipo_vivienda').value,
-                nivel_estudio: document.getElementById('natural_nivel_estudio').value
+                nivel_estudio: document.getElementById('natural_nivel_estudio').value,
+                sexo: document.getElementById('natural_sexo').value,
             };
             formData.append('datos_personales', JSON.stringify(datosPersonales));
 
@@ -529,10 +536,10 @@ function populateSelect(selectId, optionsData) {
                     nacionalidad: document.getElementById('juridica_representante_nacionalidad').value,
                     tipo_documento: document.getElementById('juridica_representante_tipo_documento').value,
                     numero_documento: document.getElementById('juridica_representante_numero_documento').value,
-                    lugar_expedicion: document.getElementById('juridica_representante_lugar_nacimiento').value,
                     fecha_expedicion: document.getElementById('juridica_representante_fecha_expedicion').value,
+                    lugar_expedicion: document.getElementById('juridica_representante_lugar_expedicion').value,
                     lugar_nacimiento: document.getElementById('juridica_representante_lugar_nacimiento').value,
-                    fecha_nacimiento: document.getElementById('juridica_representante_fecha_expedicion').value,
+                    fecha_nacimiento: document.getElementById('juridica_representante_fecha_nacimiento').value,
                     direccion: document.getElementById('juridica_direccion_empresa').value,
                     telefono: document.getElementById('juridica_telefono').value
                 },

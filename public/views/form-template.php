@@ -49,6 +49,16 @@
                                 <input type="text" id="natural_nombre" placeholder="<?php esc_html_e('Nombre completo', 'mi-formulario-api'); ?>" required>
                             </div>
                             <div>
+                                <label for="natural_sexo">
+                                    <?php esc_html_e('Sexo:', 'mi-formulario-api'); ?>
+                                </label>
+                                <select id="natural_sexo" required>
+                                    <option value=""><?php esc_html_e('Sexo', 'mi-formulario-api'); ?></option>
+                                    <option value="masculino"><?php esc_html_e('Masculino', 'mi-formulario-api'); ?></option>
+                                    <option value="femenino"><?php esc_html_e('Femenino', 'mi-formulario-api'); ?></option>
+                                </select>
+                            </div>
+                            <div>
                                 <label for="natural_tipo_documento">
                                     <?php esc_html_e('Tipo de documento:', 'mi-formulario-api'); ?>
                                 </label>
@@ -65,7 +75,7 @@
                                     required>
                             </div>
                             <div>
-                                <label for="natural_coordinacion"><?php esc_html_e('Coordinación','mi-formulario-api'); ?> :</label>
+                                <label for="natural_coordinacion"><?php esc_html_e('Coordinación:','mi-formulario-api'); ?></label>
                                 <select id="natural_coordinacion" required>
                                     <option value=""><?php esc_html_e('Coordinación','mi-formulario-api'); ?> </option>
                                 </select>
@@ -76,12 +86,19 @@
                                     placeholder="<?php esc_html_e('Fecha expedición documento (DD-MM-AAAA)','mi-formulario-api'); ?>" required>
                             </div>
                             <div>
-                                <label for="natural_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_lugar_expedicion" placeholder="<?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?>"
-                                    required>
+                                <label for="natural_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?> </label>
+                                <select id="natural_lugar_expedicion" required>
+                                    <option value=""><?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?> </option>
+                                </select>
                             </div>
                         </div>
                         <div>
+                            <div>
+                                <label for="natural_lugar_nacimiento"><?php esc_html_e('Lugar de nacimiento:','mi-formulario-api'); ?> :</label>
+                                <select id="natural_lugar_nacimiento" required>
+                                    <option value=""><?php esc_html_e('Lugar de nacimiento','mi-formulario-api'); ?> </option>
+                                </select>
+                            </div>
                             <div>
                                 <label for="natural_fecha_nacimiento"><?php esc_html_e('Fecha de nacimiento:','mi-formulario-api'); ?></label>
                                 <input type="date" id="natural_fecha_nacimiento" required>
@@ -149,8 +166,9 @@
                                 </label>
                                 <select id="natural_tipo_vivienda" required>
                                     <option value=""><?php esc_html_e('Tipo de vivienda', 'mi-formulario-api'); ?></option>
-                                    <option value="casa"><?php esc_html_e('Casa', 'mi-formulario-api'); ?></option>
-                                    <option value="apartamento"><?php esc_html_e('Apartamento', 'mi-formulario-api'); ?></option>
+                                    <option value="arrendada"><?php esc_html_e('Arrendada', 'mi-formulario-api'); ?></option>
+                                    <option value="propia"><?php esc_html_e('Propia', 'mi-formulario-api'); ?></option>
+                                    <option value="familiar"><?php esc_html_e('Familiar', 'mi-formulario-api'); ?></option>
                                 </select>
                             </div>
 
@@ -224,48 +242,49 @@
 
                 <!-- Datos Apoderado -->
                 <fieldset>
-                    <legend>Datos del Apoderado</legend>
+                    <legend>Datos del Apoderado (Opcional)</legend>
                     <div class="form-columns">
                         <div>
                             <div>
-                                <label for="natural_apoderado_nombre">Nombre completo:</label>
-                                <input type="text" id="natural_apoderado_nombre" placeholder="Nombre completo" required>
+                                <label for="natural_apoderado_nombre">Nombre completo: <span>(Opcional)</span></label>
+                                <input type="text" id="natural_apoderado_nombre" placeholder="Nombre completo" >
                             </div>
                             <div>
-                                <label for="natural_apoderado_tipo_documento">Tipo de documento:</label>
-                                <select id="natural_apoderado_tipo_documento" required>
+                                <label for="natural_apoderado_tipo_documento">Tipo de documento: <span>(Opcional)</span></label>
+                                <select id="natural_apoderado_tipo_documento" >
                                     <option value="">Tipo de documento</option>
                                     <option value="C.C.">Cédula de Ciudadanía</option>
                                     <option value="C.E.">Cédula de Extranjería</option>
                                 </select>
                             </div>
                             <div>
-                                <label for="natural_apoderado_numero_documento">Número de documento:</label>
+                                <label for="natural_apoderado_numero_documento">Número de documento: <span>(Opcional)</span></label>
                                 <input type="text" id="natural_apoderado_numero_documento"
-                                    placeholder="Número de documento" required>
+                                    placeholder="Número de documento" >
                             </div>
                         </div>
                         <div>
                             <div>
-                                <label for="natural_apoderado_fecha_expedicion">Fecha expedición:</label>
+                                <label for="natural_apoderado_fecha_expedicion">Fecha expedición: <span>(Opcional)</span></label>
                                 <input type="date" id="natural_apoderado_fecha_expedicion"
-                                    placeholder="Fecha expedición (DD-MM-AAAA)" required>
+                                    placeholder="Fecha expedición (DD-MM-AAAA)" >
                             </div>
                             <div>
-                                <label for="natural_apoderado_lugar_expedicion">Lugar de expedición:</label>
-                                <input type="text" id="natural_apoderado_lugar_expedicion"
-                                    placeholder="Lugar de expedición" required>
+                                <label for="natural_apoderado_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?> <span>(Opcional)</span></label>
+                                <select id="natural_apoderado_lugar_expedicion" >
+                                    <option value=""><?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?> </option>
+                                </select>
                             </div>
                             <div>
-                                <label for="natural_apoderado_direccion">Dirección:</label>
-                                <input type="text" id="natural_apoderado_direccion" placeholder="Dirección" required>
+                                <label for="natural_apoderado_direccion">Dirección: <span>(Opcional)</span></label>
+                                <input type="text" id="natural_apoderado_direccion" placeholder="Dirección" >
                             </div>
                         </div>
                         <div>
                             <div>
-                                <label for="natural_apoderado_telefono">Teléfono:</label>
+                                <label for="natural_apoderado_telefono">Teléfono: <span>(Opcional)</span></label>
                                 <input type="tel" id="natural_apoderado_telefono" placeholder="Teléfono"
-                                    pattern="[0-9]{10}" required>
+                                    pattern="[0-9]{10}" >
                             </div>
                         </div>
                     </div>
@@ -291,12 +310,8 @@
                             </div>
                             <div>
                                 <label for="juridica_sector_economico">Sector Económico:</label>
-                                <select id="juridica_sector_economico" required>
-                                    <option value="">Sector Económico</option>
-                                    <option value="Tecnología">Tecnología</option>
-                                    <option value="Comercio">Comercio</option>
-                                    <option value="Servicios">Servicios</option>
-                                </select>
+                                <input type="text" id="juridica_sector_economico" placeholder="Sector Económico"
+                                    required>
                             </div>
                             <div>
                                 <label for="juridica_ciiu">Código CIIU:</label>
@@ -422,8 +437,6 @@
                                     <input type="text" id="juridica_representante_nacionalidad"
                                         placeholder="Nacionalidad" required>
                                 </div>
-                            </div>
-                            <div>
                                 <div>
                                     <label for="juridica_representante_tipo_documento">Tipo documento:</label>
                                     <select id="juridica_representante_tipo_documento" required>
@@ -432,13 +445,14 @@
                                         <option value="C.E.">C.E.</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div>
+                                
                                 <div>
                                     <label for="juridica_representante_numero_documento">Número documento:</label>
                                     <input type="text" id="juridica_representante_numero_documento"
                                         placeholder="Número documento" required>
                                 </div>
-                            </div>
-                            <div>
                                 <div>
                                     <label for="juridica_representante_fecha_expedicion">Fecha expedición
                                         documento:</label>
@@ -446,9 +460,24 @@
                                         placeholder="Fecha expedición documento" required>
                                 </div>
                                 <div>
+                                    <label for="juridica_representante_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?> </label>
+                                    <select id="juridica_representante_lugar_expedicion" required>
+                                        <option value=""><?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?> </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                
+                                <div>
                                     <label for="juridica_representante_lugar_nacimiento">Lugar de nacimiento:</label>
-                                    <input type="text" id="juridica_representante_lugar_nacimiento"
-                                        placeholder="Lugar de nacimiento" required>
+                                    <select id="juridica_representante_lugar_nacimiento" required>
+                                        <option value=""><?php esc_html_e('Lugar de nacimiento','mi-formulario-api'); ?> </option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="juridica_representante_fecha_nacimiento"><?php esc_html_e('Fecha de nacimiento:','mi-formulario-api'); ?></label>
+                                    <input type="date" id="juridica_representante_fecha_nacimiento" required>
                                 </div>
                             </div>
                         </div>
@@ -948,6 +977,34 @@
                 <fieldset class="documentos-upload">
                     <legend>Carga de Documentos</legend>
                     <div class="documentos-grid">
+                        <!-- Documento de Identidad 150% -->
+                        <div class="documento-item">
+                            <label for="doc_identidad_150">Documento Identidad*</label>
+                            <input type="file" id="doc_identidad_150" name="doc_identidad_150" accept=".pdf,.jpg,.png"
+                                required>
+                            <small class="helper-text">(Foto de la cedula por ambas caras, Formato PDF o imagen .jpg,
+                                .png)</small>
+                        </div>
+                        <!-- Hoja de Vida -->
+                        <div class="documento-item">
+                            <label for="hoja_vida">Hoja de Vida*</label>
+                            <input type="file" id="hoja_vida" name="hoja_vida" accept=".pdf," required>
+                            <small class="helper-text">(Actualizada, Formato PDF)</small>
+                        </div>
+                        <!-- Referencia Comercial/Laboral -->
+                        <div class="documento-item">
+                            <label for="ref_comercial_laboral">Referencia Comercial</label>
+                            <input type="file" id="ref_comercial_laboral" name="ref_comercial_laboral"
+                                accept=".pdf,.jpg,.png">
+                            <small class="helper-text">(Formato PDF o imagen .jpg,
+                                .png)</small>
+                        </div>
+                        <!-- Fotocopia RUT -->
+                        <div class="documento-item">
+                            <label for="fotocopia_rut">Fotocopia RUT*</label>
+                            <input type="file" id="fotocopia_rut" name="fotocopia_rut" accept=".pdf,.jpg,.png" required>
+                            <small class="helper-text">(Vigente, Formato PDF o imagen .jpg, .png)</small>
+                        </div>
                         <!-- Certificación Bancaria Extranjera -->
                         <div class="documento-item">
                             <label for="cert_bancaria_ext">Certificación Bancaria Extranjera*</label>
@@ -957,59 +1014,35 @@
                         </div>
 
                         <!-- Nómina de Servicios Sociales y Documento de Identidad -->
-                        <div class="documento-item">
+                        <!-- <div class="documento-item">
                             <label for="nss_doc_identidad">NSS + Documento Identidad*</label>
                             <input type="file" id="nss_doc_identidad" name="nss_doc_identidad" accept=".pdf,.jpg,.png"
                                 required multiple>
                             <small class="helper-text">(Formato PDF o imagen .jpg, .png)</small>
-                        </div>
+                        </div> -->
 
                         <!-- Certificación Bancaria Local -->
-                        <div class="documento-item">
+                        <!-- <div class="documento-item">
                             <label for="cert_bancaria">Certificación Bancaria Local*</label>
                             <input type="file" id="cert_bancaria" name="cert_bancaria" accept=".pdf,.jpg,.png" required>
                             <small class="helper-text">(Últimos 3 meses, Formato PDF o imagen .jpg, .png)</small>
-                        </div>
+                        </div> -->
 
-                        <!-- Referencia Comercial/Laboral -->
-                        <div class="documento-item">
-                            <label for="ref_comercial_laboral">Referencia Comercial/Laboral</label>
-                            <input type="file" id="ref_comercial_laboral" name="ref_comercial_laboral"
-                                accept=".pdf,.jpg,.png">
-                            <small class="helper-text">(Carta en papel membretado, Formato PDF o imagen .jpg,
-                                .png)</small>
-                        </div>
+                        
 
                         <!-- Certificados Universitarios -->
-                        <div class="documento-item">
+                        <!-- <div class="documento-item">
                             <label for="cert_universitarios">Certificados Académicos*</label>
                             <input type="file" id="cert_universitarios" name="cert_universitarios" accept=".pdf,"
                                 required multiple>
                             <small class="helper-text">(Todos los títulos en un solo PDF)</small>
-                        </div>
+                        </div> -->
 
-                        <!-- Fotocopia RUT -->
-                        <div class="documento-item">
-                            <label for="fotocopia_rut">Fotocopia RUT*</label>
-                            <input type="file" id="fotocopia_rut" name="fotocopia_rut" accept=".pdf,.jpg,.png" required>
-                            <small class="helper-text">(Vigente, Formato PDF o imagen .jpg, .png)</small>
-                        </div>
+                        
 
-                        <!-- Hoja de Vida -->
-                        <div class="documento-item">
-                            <label for="hoja_vida">Hoja de Vida*</label>
-                            <input type="file" id="hoja_vida" name="hoja_vida" accept=".pdf," required>
-                            <small class="helper-text">(Actualizada, Formato PDF)</small>
-                        </div>
+                        
 
-                        <!-- Documento de Identidad 150% -->
-                        <div class="documento-item">
-                            <label for="doc_identidad_150">Documento Identidad Ampliado*</label>
-                            <input type="file" id="doc_identidad_150" name="doc_identidad_150" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Escaneo al 150% de tamaño real, Formato PDF o imagen .jpg,
-                                .png)</small>
-                        </div>
+                        
                     </div>
                 </fieldset>
 

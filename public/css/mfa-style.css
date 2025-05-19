@@ -2,7 +2,7 @@
 .mfa-form-container {
     border: 1px solid #ccd0d4; /* WordPress admin color */
     padding: 20px;
-    max-width: 600px;
+    max-width: 1000px;
     margin: 20px auto;
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0,0,0,.04);
@@ -285,7 +285,7 @@
         margin: 8px 0;
     }
 
-    input[type="number"] {
+    input[type="number"], input[type=tel] {
         padding: 8px;
         width: 100%;
     }
