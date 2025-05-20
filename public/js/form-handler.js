@@ -106,7 +106,6 @@ function populateSelect(selectId, optionsData) {
 
         
         const formElement = getElement(FORM_ID);
-        console.log('formElement', formElement);
         
         if (!formElement) return; // No hay formulario en esta página
         
@@ -207,17 +206,20 @@ function populateSelect(selectId, optionsData) {
             const formDataTest = buildFormData();
 
 
-            const formData = new FormData(formElement);
-            const data = Object.fromEntries(formData.entries());
+            // const formData = new FormData(formElement);
+            // const data = Object.fromEntries(formData.entries());
 
             try {
                 const result = await submitFormData(formDataTest);
                 console.log('Form submitted successfully via WP REST API:', result);
                 displayMessage(SUCCESS_MESSAGE_ID, result.message || 'Formulario enviado con éxito.');
-                formElement.reset();
-                currentStep = 1;
-                updateProgress();
-                showStep(1);
+                alert('Formulario enviado con éxito.');
+                setTimeout(() => {
+                    formElement.reset();
+                    currentStep = 1;
+                    updateProgress();
+                    showStep(1);                    
+                }, 5000);
             } catch (error) {
                 console.error('Failed to submit form via WP REST API:', error.message);
                 displayMessage(ERROR_MESSAGE_ID, `Error al enviar: ${error.message}`, true);
@@ -233,9 +235,7 @@ function populateSelect(selectId, optionsData) {
         document.getElementById('progress').style.width = `${(currentStep / 4) * 100}%`;
     }
 
-    function showStep(step) {
-        console.log('showStep', step);
-        
+    function showStep(step) {       
         document.querySelectorAll('.form-step').forEach(el => {
             el.classList.remove('active-step');
         });
@@ -273,19 +273,24 @@ function populateSelect(selectId, optionsData) {
                 //     // El 'select_id' (ej: 'opciones_categoria') debe coincidir con lo que espera tu endpoint REST en PHP
                 //     // y cómo tu MFA_API_Handler construye la URL para la API externa.
                 const select1Data = await fetchSelectOptions('opciones_bancos'); // Cambia 'opciones_tipo_documento'
-                populateSelect('natural_banco', select1Data);
-                populateSelect('juridica_banco', select1Data);
-
-                    
-
                 const select2Data = await fetchSelectOptions('opciones_ciudad'); // Cambia 'opciones_ciudad'
-                populateSelect('natural_lugar_expedicion', select2Data);
-                populateSelect('natural_lugar_nacimiento', select2Data);
-                populateSelect('natural_apoderado_lugar_expedicion', select2Data);
-
-                //     // ...cargar más selects si es necesario
                 const select3Data = await fetchSelectOptions('opciones_coord_comercial');
-                populateSelect('natural_coordinacion', select3Data);
+                
+                
+                if (tipo === 'juridica') {
+                    populateSelect('juridica_ciudad', select2Data);
+                    populateSelect('juridica_representante_lugar_expedicion', select2Data);
+                    populateSelect('juridica_representante_lugar_nacimiento', select2Data);
+                    populateSelect('juridica_banco', select1Data);
+                    
+                } else {
+                    populateSelect('natural_lugar_expedicion', select2Data);
+                    populateSelect('natural_lugar_nacimiento', select2Data);
+                    populateSelect('natural_apoderado_lugar_expedicion', select2Data);
+                    populateSelect('natural_banco', select1Data);
+                    populateSelect('natural_coordinacion', select3Data);
+
+                }
 
                 } catch (error) {
                     console.error('Failed to initialize form with select data:', error.message);

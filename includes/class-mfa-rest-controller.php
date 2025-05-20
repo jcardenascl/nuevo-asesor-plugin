@@ -45,7 +45,7 @@ class MFA_REST_Controller extends WP_REST_Controller {
                 'methods'             => WP_REST_Server::CREATABLE, // POST
                 'callback'            => [ $this, 'submit_form_data' ],
                 'permission_callback' => [ $this, 'check_permissions' ],
-                'args'                => $this->get_form_submit_args(), // Definir argumentos para validación/sanitización
+                // 'args'                => $this->get_form_submit_args(), // Definir argumentos para validación/sanitización
             ],
         ]);
     }
@@ -83,7 +83,6 @@ class MFA_REST_Controller extends WP_REST_Controller {
             'datos_apoderado' => [
                 'required' => true,
                 'type' => 'string',
-                'validate_callback' => 'rest_is_valid_json'
             ],
             'actividad_economica_asalariado' => [
                 'required' => true,
@@ -141,12 +140,12 @@ class MFA_REST_Controller extends WP_REST_Controller {
         foreach ($structure as $key => $type) {
             if (!array_key_exists($key, $data)) return false;
             
-            $valid = match($type) {
-                'string' => is_string($data[$key]),
-                'numeric' => is_numeric($data[$key]),
-                'boolean' => is_bool($data[$key]),
-                default => true
-            };
+            switch ($type) {  // ✅ Alternativa compatible
+                case 'string': $valid = is_string($data[$key]); break;
+                case 'numeric': $valid = is_numeric($data[$key]); break;
+                case 'boolean': $valid = is_bool($data[$key]); break;
+                default: $valid = true;
+            }
             
             if (!$valid) return false;
         }
@@ -238,29 +237,20 @@ class MFA_REST_Controller extends WP_REST_Controller {
     }
 
     public function submit_form_data( WP_REST_Request $request ) {
-        // Los parámetros ya están validados y sanitizados por 'args' si se usó $request->get_params()
-        // o get_json_params() si el Content-Type es application/json
-        $form_data = $request->get_json_params(); // Para JSON payload
-        // Si envías como FormData desde JS (no application/json), usarías:
-        // $form_data = $request->get_params(); // Para x-www-form-urlencoded o multipart/form-data
+        $form_data = $request->get_params(); // Para x-www-form-urlencoded o multipart/form-data
+        $files = $request->get_file_params();
+
+        $payload = array_merge($form_data, $files);
 
         if ( empty( $form_data ) ) {
             return new WP_Error( 'missing_payload', __( 'No se recibieron datos en el formulario.', 'mi-formulario-api' ), [ 'status' => 400 ] );
         }
 
-        $validation = validate_simple_api_request();
-            
-        if (is_wp_error($validation)) {
-            return new WP_REST_Response([
-                'error' => true,
-                'messages' => $validation->get_error_messages()
-            ], 400);
-        }
 
         // IMPORTANTE: Ajusta 'form/submit-endpoint' al endpoint real de tu API externa para enviar datos.
-        $external_api_endpoint = 'api/fabrica/asesor_wordpress/crear_asesor_';
+        $external_api_endpoint = 'api/fabrica/asesor_wordpress/crear_asesor_wordpress/';
 
-        $response_data = $this->api_handler->make_request( $external_api_endpoint, 'POST', $form_data );
+        $response_data = $this->api_handler->make_request( $external_api_endpoint, 'POST', $payload);
 
         if ( is_wp_error( $response_data ) ) {
             return $response_data;
@@ -276,6 +266,7 @@ class MFA_REST_Controller extends WP_REST_Controller {
             'api_response' => $response_data // Opcional: devolver la respuesta completa de la API
         ], 200 );
     }
+
 
     public function validate_simple_api_request() {
         $errors = new WP_Error();
@@ -294,7 +285,8 @@ class MFA_REST_Controller extends WP_REST_Controller {
 
         // Validar existencia y formato JSON de los parámetros
         foreach ($required_params as $param) {
-            if (!isset($_POST[$param])) {
+            $params = $request->get_params();
+            if (!$params[$param]) {
                 $errors->add($param, "Parámetro $param faltante");
                 continue;
             }
@@ -345,11 +337,14 @@ class MFA_REST_Controller extends WP_REST_Controller {
         ];
 
         foreach ($required_files as $file) {
-            if (empty($_FILES[$file]) || $_FILES[$file]['error'] !== UPLOAD_ERR_OK) {
+            $files = $request->get_file_params();
+            if (empty($files[$file]) || $files[$file]['error'] !== UPLOAD_ERR_OK) {
                 $errors->add($file, "Archivo requerido: $file");
             }
         }
 
         return $errors->has_errors() ? $errors : true;
     }
+
+
 }

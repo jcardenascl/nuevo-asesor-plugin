@@ -10,7 +10,6 @@ const { rest_url, nonce, selectDataEndpointBase, submitEndpointPath } = mfa_para
  * @param {string} selectIdentifier Identificador único para el select (ej: 'opciones1').
  */
 async function fetchSelectOptions(selectIdentifier) {
-    console.log(`Workspaceing select options for "${selectIdentifier}" via WP REST API...`);
     const endpoint = rest_url + selectDataEndpointBase + encodeURIComponent(selectIdentifier);
 
     try {
@@ -41,14 +40,13 @@ async function fetchSelectOptions(selectIdentifier) {
  * @param {object} formDataObject Datos del formulario como objeto.
  */
 async function submitFormData(formDataObject) {
-    console.log('Submitting form data via WP REST API...');
+    console.log('Submitting form data ');
     const endpoint = rest_url + submitEndpointPath;
 
     try {
         const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
-                // 'Content-Type': 'application/json',
                 'X-WP-Nonce': nonce,
             },
             body: formDataObject,

@@ -329,7 +329,9 @@
                             </div>
                             <div>
                                 <label for="juridica_ciudad">Ciudad:</label>
-                                <input type="text" id="juridica_ciudad" placeholder="Ciudad" required>
+                                <select id="juridica_ciudad" required>
+                                    <option value=""><?php esc_html_e('Ciudad','mi-formulario-api'); ?> </option>
+                                </select>
                             </div>
 
                         </div>
