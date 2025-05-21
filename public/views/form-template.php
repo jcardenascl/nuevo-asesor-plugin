@@ -305,13 +305,19 @@
                             </div>
                             <div>
                                 <label for="juridica_nit">NIT:</label>
-                                <input type="text" id="juridica_nit" placeholder="NIT" pattern="[0-9]{9}-[0-9]"
+                                <input type="number" id="juridica_nit" placeholder="NIT" pattern="[0-9]{9}-[0-9]"
                                     required>
                             </div>
                             <div>
                                 <label for="juridica_sector_economico">Sector Económico:</label>
                                 <input type="text" id="juridica_sector_economico" placeholder="Sector Económico"
                                     required>
+                            </div>
+                            <div>
+                                <label for="juridica_coordinacion"><?php esc_html_e('Coordinación:','mi-formulario-api'); ?></label>
+                                <select id="juridica_coordinacion" required>
+                                    <option value=""><?php esc_html_e('Coordinación','mi-formulario-api'); ?> </option>
+                                </select>
                             </div>
                             <div>
                                 <label for="juridica_ciiu">Código CIIU:</label>
@@ -493,14 +499,17 @@
                             <div class="contacto-section">
                                 <h5>Contacto Comercial</h5>
                                 <div>
+                                    <label for="contacto_comercial_nombre">Nombre completo:</label>
                                     <input type="text" id="contacto_comercial_nombre"
                                         placeholder="Nombre contacto comercial" required>
                                 </div>
                                 <div>
+                                    <label for="contacto_comercial_telefono">Teléfono:</label>
                                     <input type="tel" id="contacto_comercial_telefono"
                                         placeholder="Teléfono contacto comercial" pattern="[0-9]{10}" required>
                                 </div>
                                 <div>
+                                    <label for="contacto_comercial_correo">Correo:</label>
                                     <input type="email" id="contacto_comercial_correo"
                                         placeholder="Correo contacto comercial" required>
                                 </div>
@@ -510,14 +519,17 @@
                             <div class="contacto-section">
                                 <h5>Contacto Contabilidad</h5>
                                 <div>
+                                    <label for="contacto_contabilidad_nombre">Nombre completo:</label>
                                     <input type="text" id="contacto_contabilidad_nombre"
                                         placeholder="Nombre contacto contabilidad" required>
                                 </div>
                                 <div>
+                                    <label for="contacto_contabilidad_telefono">Teléfono:</label>
                                     <input type="tel" id="contacto_contabilidad_telefono"
                                         placeholder="Teléfono contacto contabilidad" pattern="[0-9]{10}" required>
                                 </div>
                                 <div>
+                                    <label for="contacto_contabilidad_correo">Correo:</label>
                                     <input type="email" id="contacto_contabilidad_correo"
                                         placeholder="Correo contacto contabilidad" required>
                                 </div>
@@ -1008,12 +1020,12 @@
                             <small class="helper-text">(Vigente, Formato PDF o imagen .jpg, .png)</small>
                         </div>
                         <!-- Certificación Bancaria Extranjera -->
-                        <div class="documento-item">
+                        <!-- <div class="documento-item">
                             <label for="cert_bancaria_ext">Certificación Bancaria Extranjera*</label>
                             <input type="file" id="cert_bancaria_ext" name="cert_bancaria_ext" accept=".pdf,.jpg,.png"
                                 required>
                             <small class="helper-text">(Formato PDF o imagen .jpg, .png, máximo 5MB)</small>
-                        </div>
+                        </div> -->
 
                         <!-- Nómina de Servicios Sociales y Documento de Identidad -->
                         <!-- <div class="documento-item">
@@ -1024,11 +1036,11 @@
                         </div> -->
 
                         <!-- Certificación Bancaria Local -->
-                        <!-- <div class="documento-item">
-                            <label for="cert_bancaria">Certificación Bancaria Local*</label>
+                        <div class="documento-item">
+                            <label for="cert_bancaria">Certificación Bancaria*</label>
                             <input type="file" id="cert_bancaria" name="cert_bancaria" accept=".pdf,.jpg,.png" required>
-                            <small class="helper-text">(Últimos 3 meses, Formato PDF o imagen .jpg, .png)</small>
-                        </div> -->
+                            <small class="helper-text">(Formato PDF o imagen .jpg, .png)</small>
+                        </div>
 
                         
 
@@ -1053,21 +1065,38 @@
                 <fieldset class="documentos-upload">
                     <legend>Carga de Documentos - Persona Jurídica</legend>
                     <div class="documentos-grid">
-                        <!-- Certificación Bancaria Extranjera -->
+                        <!-- Fotocopia NIT/RUT -->  
                         <div class="documento-item">
+                            <label for="fotocopia_nit_rut">Fotocopia NIT/RUT*</label>
+                            <input type="file" id="fotocopia_nit_rut" name="fotocopia_nit_rut" accept=".pdf,.jpg,.png"
+                                required>
+                            <small class="helper-text">(Actualizado, formato PDF o imagen .jpg, .png)</small>
+                        </div>
+
+                        <!-- Documento Identidad 150% RL -->
+                        <div class="documento-item">
+                            <label for="doc_identidad_150_rl">Documento Identidad RL Ampliado*</label>
+                            <input type="file" id="doc_identidad_150_rl" name="doc_identidad_150_rl"
+                                accept=".pdf,.jpg,.png" required>
+                            <small class="helper-text">(Representante Legal, 150% tamaño real, formato PDF o imagen
+                                .jpg, .png)</small>
+                        </div>
+
+                        <!-- Certificación Bancaria Extranjera -->
+                        <!-- <div class="documento-item">
                             <label for="cert_bancaria_ext">Certificación Bancaria Extranjera*</label>
                             <input type="file" id="cert_bancaria_ext" name="cert_bancaria_ext" accept=".pdf,.jpg,.png"
                                 required>
                             <small class="helper-text">(Formato PDF o imagen .jpg, .png, máximo 5MB)</small>
-                        </div>
+                        </div> -->
 
                         <!-- PTIN Identificación Preparador -->
-                        <div class="documento-item">
+                        <!-- <div class="documento-item">
                             <label for="ptin_identificacion_preparador">PTIN Preparador Fiscal*</label>
                             <input type="file" id="ptin_identificacion_preparador" name="ptin_identificacion_preparador"
                                 accept=".pdf,.jpg,.png" required>
                             <small class="helper-text">(Documento vigente, formato PDF o imagen .jpg, .png)</small>
-                        </div>
+                        </div> -->
 
                         <!-- ITIN Identificación Contribuyente -->
                         <div class="documento-item">
@@ -1095,13 +1124,13 @@
                         </div>
 
                         <!-- Poder de Apoderado -->
-                        <div class="documento-item">
+                        <!-- <div class="documento-item">
                             <label for="poder_apoderado">Poder de Apoderado*</label>
                             <input type="file" id="poder_apoderado" name="poder_apoderado" accept=".pdf,.jpg,.png"
                                 required>
                             <small class="helper-text">(Escritura pública vigente, formato PDF o imagen .jpg,
                                 .png)</small>
-                        </div>
+                        </div> -->
 
                         <!-- Declaración de Renta -->
                         <div class="documento-item">
@@ -1130,9 +1159,9 @@
 
                         <!-- Certificación Bancaria Local -->
                         <div class="documento-item">
-                            <label for="cert_bancaria">Certificación Bancaria Local*</label>
+                            <label for="cert_bancaria">Certificación Bancaria*</label>
                             <input type="file" id="cert_bancaria" name="cert_bancaria" accept=".pdf,.jpg,.png" required>
-                            <small class="helper-text">(Últimos 3 meses, formato PDF o imagen .jpg, .png)</small>
+                            <small class="helper-text">(Formato PDF o imagen .jpg, .png)</small>
                         </div>
 
                         <!-- Certificado Existencia SFC -->
@@ -1152,22 +1181,6 @@
                                 .png)</small>
                         </div>
 
-                        <!-- Fotocopia NIT/RUT -->
-                        <div class="documento-item">
-                            <label for="fotocopia_nit_rut">Fotocopia NIT/RUT*</label>
-                            <input type="file" id="fotocopia_nit_rut" name="fotocopia_nit_rut" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Actualizado, formato PDF o imagen .jpg, .png)</small>
-                        </div>
-
-                        <!-- Documento Identidad 150% RL -->
-                        <div class="documento-item">
-                            <label for="doc_identidad_150_rl">Documento Identidad RL Ampliado*</label>
-                            <input type="file" id="doc_identidad_150_rl" name="doc_identidad_150_rl"
-                                accept=".pdf,.jpg,.png" required>
-                            <small class="helper-text">(Representante Legal, 150% tamaño real, formato PDF o imagen
-                                .jpg, .png)</small>
-                        </div>
                     </div>
                 </fieldset>
             </div>

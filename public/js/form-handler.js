@@ -282,6 +282,7 @@ function populateSelect(selectId, optionsData) {
                     populateSelect('juridica_representante_lugar_expedicion', select2Data);
                     populateSelect('juridica_representante_lugar_nacimiento', select2Data);
                     populateSelect('juridica_banco', select1Data);
+                    populateSelect('juridica_coordinacion', select3Data);
                     
                 } else {
                     populateSelect('natural_lugar_expedicion', select2Data);
@@ -519,7 +520,7 @@ function populateSelect(selectId, optionsData) {
             //     'hoja_vida', 'doc_identidad_150'
             // ];
             const fileInputs = [
-                'cert_bancaria_ext',
+                'cert_bancaria',
                 'ref_comercial_laboral', 'fotocopia_rut',
                 'hoja_vida', 'doc_identidad_150'
             ];
@@ -541,6 +542,7 @@ function populateSelect(selectId, optionsData) {
                 razon_social: document.getElementById('juridica_razon_social').value,
                 nit: document.getElementById('juridica_nit').value,
                 sector_economico: document.getElementById('juridica_sector_economico').value,
+                coordinacion: document.getElementById('juridica_coordinacion').value,
                 CIIU: document.getElementById('juridica_ciiu').value,
                 descripcion_actividad: document.getElementById('juridica_descripcion_actividad').value,
                 clase_sociedad: document.getElementById('juridica_clase_sociedad').value,
@@ -666,13 +668,21 @@ function populateSelect(selectId, optionsData) {
             formData.append('referencias_comerciales', JSON.stringify(referenciasData.referencias_comerciales));
 
             // Archivos (ajustar según IDs correctos)
+            // const fileFields = [
+            //     'cert_bancaria_ext', 'ptin_identificacion_preparador', 'itin_identificacion_contribuyente',
+            //     'nss_doc_identidad', 'ein_identificacion_fiscal', 'poder_apoderado',
+            //     'declaracion_renta', 'estados_financieros', 'ref_comercial_laboral',
+            //     'cert_bancaria', 'cert_existencia_sfc', 'cert_existencia_cc',
+            //     'fotocopia_nit_rut', 'doc_identidad_150_rl'
+            // ];
             const fileFields = [
-                'cert_bancaria_ext', 'ptin_identificacion_preparador', 'itin_identificacion_contribuyente',
-                'nss_doc_identidad', 'ein_identificacion_fiscal', 'poder_apoderado',
+                'itin_identificacion_contribuyente',
+                'nss_doc_identidad', 'ein_identificacion_fiscal',
                 'declaracion_renta', 'estados_financieros', 'ref_comercial_laboral',
                 'cert_bancaria', 'cert_existencia_sfc', 'cert_existencia_cc',
                 'fotocopia_nit_rut', 'doc_identidad_150_rl'
             ];
+
 
             fileFields.forEach(field => {
                 const input = document.getElementById(field);
