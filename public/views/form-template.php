@@ -39,203 +39,227 @@
             <div id="naturalFields" style="display:none;">
                 <!-- Datos Personales -->
                 <fieldset>
-                    <legend><?php esc_html_e('Datos Personales', 'mi-formulario-api'); ?></legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_nombre">
-                                    <?php esc_html_e('Nombre:', 'mi-formulario-api'); ?>
-                                </label>
-                                <input type="text" id="natural_nombre" placeholder="<?php esc_html_e('Nombre completo', 'mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_sexo">
-                                    <?php esc_html_e('Sexo:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_sexo" required>
-                                    <option value=""><?php esc_html_e('Sexo', 'mi-formulario-api'); ?></option>
-                                    <option value="masculino"><?php esc_html_e('Masculino', 'mi-formulario-api'); ?></option>
-                                    <option value="femenino"><?php esc_html_e('Femenino', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_tipo_documento">
-                                    <?php esc_html_e('Tipo de documento:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_tipo_documento" required>
-                                    <option value=""><?php esc_html_e('Tipo de documento', 'mi-formulario-api'); ?></option>
-                                    <option value="C.C."><?php esc_html_e('Cédula de Ciudadanía', 'mi-formulario-api'); ?></option>
-                                    <option value="C.E."><?php esc_html_e('Cédula de Extranjería', 'mi-formulario-api'); ?></option>
-                                    <option value="Pasaporte"><?php esc_html_e('Pasaporte', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_numero_documento"><?php esc_html_e('Número de documento:', 'mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_numero_documento" placeholder="<?php esc_html_e('Número de documento', 'mi-formulario-api'); ?>"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="natural_coordinacion"><?php esc_html_e('Coordinación:','mi-formulario-api'); ?></label>
-                                <select id="natural_coordinacion" required>
-                                    <option value=""><?php esc_html_e('Coordinación','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_fecha_expedicion"><?php esc_html_e('Fecha expedición documento:','mi-formulario-api'); ?></label>
-                                <input type="date" id="natural_fecha_expedicion"
-                                    placeholder="<?php esc_html_e('Fecha expedición documento (DD-MM-AAAA)','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?> </label>
-                                <select id="natural_lugar_expedicion" required>
-                                    <option value=""><?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="natural_lugar_nacimiento"><?php esc_html_e('Lugar de nacimiento:','mi-formulario-api'); ?> :</label>
-                                <select id="natural_lugar_nacimiento" required>
-                                    <option value=""><?php esc_html_e('Lugar de nacimiento','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_fecha_nacimiento"><?php esc_html_e('Fecha de nacimiento:','mi-formulario-api'); ?></label>
-                                <input type="date" id="natural_fecha_nacimiento" required>
-                            </div>
-                            <div>
-                                <label for="natural_direccion"><?php esc_html_e('Dirección completa:','mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_direccion" placeholder="<?php esc_html_e('Dirección completa','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_telefono"><?php esc_html_e('Teléfono:','mi-formulario-api'); ?></label>
-                                <input type="tel" id="natural_telefono" placeholder="<?php esc_html_e('Teléfono','mi-formulario-api'); ?>" pattern="[0-9]{10}"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="natural_correo"><?php esc_html_e('Correo electrónico:','mi-formulario-api'); ?></label>
-                                <input type="email" id="natural_correo" placeholder="<?php esc_html_e('Correo electrónico','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_nacionalidad"><?php esc_html_e('Nacionalidad:','mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_nacionalidad" placeholder="<?php esc_html_e('Nacionalidad','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_estado_civil"><?php esc_html_e('Estado civil:','mi-formulario-api'); ?></label>
-                                <select id="natural_estado_civil" required>
-                                    <option value=""><?php esc_html_e('Estado civil','mi-formulario-api'); ?></option>
-                                    <option value="Soltero"><?php esc_html_e('Soltero','mi-formulario-api'); ?></option>
-                                    <option value="Casado"><?php esc_html_e('Casado','mi-formulario-api'); ?></option>
-                                    <option value="Divorciado"><?php esc_html_e('Divorciado','mi-formulario-api'); ?></option>
-                                    <option value="Viudo"><?php esc_html_e('Viudo','mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="natural_ocupacion"><?php esc_html_e('Ocupación:','mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_ocupacion" placeholder="<?php esc_html_e('Ocupación','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_numero_cuenta"><?php esc_html_e('Número de Cuenta:','mi-formulario-api'); ?></label>
-                                <input type="number" id="natural_numero_cuenta" placeholder="<?php esc_html_e('Número de cuenta','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_tipo_cuenta">
-                                    <?php esc_html_e('Tipo de cuenta:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_tipo_cuenta" required>
-                                    <option value=""><?php esc_html_e('Tipo de cuenta', 'mi-formulario-api'); ?></option>
-                                    <option value="corriente"><?php esc_html_e('Corriente', 'mi-formulario-api'); ?></option>
-                                    <option value="ahorro"><?php esc_html_e('Ahorro', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="natural_banco">
-                                    <?php esc_html_e('Banco:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_banco" required>
-                                    <option value=""><?php esc_html_e('Banco', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="natural_tipo_vivienda">
-                                    <?php esc_html_e('Tipo de vivienda:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_tipo_vivienda" required>
-                                    <option value=""><?php esc_html_e('Tipo de vivienda', 'mi-formulario-api'); ?></option>
-                                    <option value="arrendada"><?php esc_html_e('Arrendada', 'mi-formulario-api'); ?></option>
-                                    <option value="propia"><?php esc_html_e('Propia', 'mi-formulario-api'); ?></option>
-                                    <option value="familiar"><?php esc_html_e('Familiar', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="natural_nivel_estudio">
-                                    <?php esc_html_e('Nivel de estudio:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_nivel_estudio" required>
-                                    <option value=""><?php esc_html_e('Nivel de estudio', 'mi-formulario-api'); ?></option>
-                                    <option value="basica"><?php esc_html_e('Educación Básica', 'mi-formulario-api'); ?></option>
-                                    <option value="media"><?php esc_html_e('Educación Media', 'mi-formulario-api'); ?></option>
-                                    <option value="superior"><?php esc_html_e('Educación Superior', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                   <legend><?php esc_html_e('Datos Personales', 'mi-formulario-api'); ?></legend>
+                   <div class="form-grid">
+                      <!-- Fila 1 -->
+                      <div class="form-group">
+                         <label for="natural_primer_nombre">Primer nombre</label>
+                         <input type="text" id="natural_primer_nombre" name="natural_primer_nombre" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_segundo_nombre">Segundo nombre</label>
+                         <input type="text" id="natural_segundo_nombre" name="natural_segundo_nombre">
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_primer_apellido">Primer apellido</label>
+                         <input type="text" id="natural_primer_apellido" name="natural_primer_apellido" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_segundo_apellido">Segundo apellido</label>
+                         <input type="text" id="natural_segundo_apellido" name="natural_segundo_apellido">
+                      </div>
+                      <!-- Fila 2 -->
+                      <div class="form-group">
+                         <label for="natural_tipo_documento">Tipo de documento</label>
+                         <select id="natural_tipo_documento" name="natural_tipo_documento" required>
+                            <option value="">Seleccione</option>
+                            <option value="C.C.">Cédula de Ciudadanía</option>
+                            <option value="C.E.">Cédula de Extranjería</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_numero_documento">Número de documento</label>
+                         <input type="text" id="natural_numero_documento" name="natural_numero_documento" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_fecha_expedicion">Fecha de expedición</label>
+                         <input type="date" id="natural_fecha_expedicion" name="natural_fecha_expedicion" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_lugar_expedicion">Lugar de expedición</label>
+                         <select id="natural_lugar_expedicion" name="natural_lugar_expedicion" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <!-- Fila 3 -->
+                      <div class="form-group">
+                         <label for="natural_fecha_nacimiento">Fecha de nacimiento</label>
+                         <input type="date" id="natural_fecha_nacimiento" name="natural_fecha_nacimiento" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_lugar_nacimiento">Lugar de nacimiento</label>
+                         <select id="natural_lugar_nacimiento" name="natural_lugar_nacimiento" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_sexo">Sexo</label>
+                         <select id="natural_sexo" name="natural_sexo" required>
+                            <option value="">Seleccione</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_nacionalidad">Nacionalidad</label>
+                         <input type="text" id="natural_nacionalidad" name="natural_nacionalidad" required>
+                      </div>
+                      <!-- Fila 4 -->
+                      <div class="form-group">
+                         <label for="natural_ciudad_residencia">Ciudad de residencia</label>
+                         <select id="natural_ciudad_residencia" name="natural_ciudad_residencia" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_direccion">Dirección de residencia</label>
+                         <input type="text" id="natural_direccion" name="natural_direccion" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_correo">Correo electrónico</label>
+                         <input type="email" id="natural_correo" name="natural_correo" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_celular">Celular</label>
+                         <input type="tel" id="natural_celular" name="natural_celular" pattern="[0-9]{10}" required>
+                      </div>
+                      <!-- Fila 5 -->
+                      <div class="form-group">
+                         <label for="natural_estado_civil">Estado civil</label>
+                         <select id="natural_estado_civil" name="natural_estado_civil" required>
+                            <option value="">Seleccione</option>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Divorciado">Divorciado</option>
+                            <option value="Viudo">Viudo</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_ocupacion">Ocupación</label>
+                         <input type="text" id="natural_ocupacion" name="natural_ocupacion" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_tipo_vivienda">Tipo de vivienda</label>
+                         <select id="natural_tipo_vivienda" name="natural_tipo_vivienda" required>
+                            <option value="">Seleccione</option>
+                            <option value="arrendada">Arrendada</option>
+                            <option value="propia">Propia</option>
+                            <option value="familiar">Familiar</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_nivel_estudio">Nivel de estudio</label>
+                         <select id="natural_nivel_estudio" name="natural_nivel_estudio" required>
+                            <option value="">Seleccione</option>
+                            <option value="basica">Educación Básica</option>
+                            <option value="media">Educación Media</option>
+                            <option value="superior">Educación Superior</option>
+                         </select>
+                      </div>
+                      <!-- Fila 6 -->
+                      <div class="form-group">
+                         <label for="natural_banco">Banco</label>
+                         <select id="natural_banco" name="natural_banco" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_tipo_cuenta">Tipo de cuenta</label>
+                         <select id="natural_tipo_cuenta" name="natural_tipo_cuenta" required>
+                            <option value="">Seleccione</option>
+                            <option value="corriente">Corriente</option>
+                            <option value="ahorro">Ahorro</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_numero_cuenta">Número de cuenta</label>
+                         <input type="number" id="natural_numero_cuenta" name="natural_numero_cuenta" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_coordinacion">Coordinación</label>
+                         <select id="natural_coordinacion" name="natural_coordinacion" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                   </div>
                 </fieldset>
 
                 <!-- Datos Cónyuge -->
                 <fieldset class="conyuge-section" style="display: none;">
                     <legend>Datos del Cónyuge</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_conyuge_nombre">Nombre completo:</label>
-                                <input type="text" id="natural_conyuge_nombre" placeholder="Nombre completo">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_tipo_documento">Tipo de documento:</label>
-                                <select id="natural_conyuge_tipo_documento">
-                                    <option value="">Tipo de documento</option>
-                                    <option value="C.C.">Cédula de Ciudadanía</option>
-                                    <option value="C.E.">Cédula de Extranjería</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_numero_documento">Número de documento:</label>
-                                <input type="text" id="natural_conyuge_numero_documento"
-                                    placeholder="Número de documento">
-                            </div>
+                    <div class="form-grid">
+                        <!-- Fila 1 -->
+                        <div class="form-group">
+                            <label for="conyuge_primer_nombre">Primer nombre:</label>
+                            <input type="text" id="conyuge_primer_nombre" name="conyuge_primer_nombre" placeholder="Primer nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_conyuge_fecha_expedicion">Fecha expedición:</label>
-                                <input type="date" id="natural_conyuge_fecha_expedicion"
-                                    placeholder="Fecha expedición (DD-MM-AAAA)">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_lugar_expedicion">Lugar de expedición:</label>
-                                <input type="text" id="natural_conyuge_lugar_expedicion"
-                                    placeholder="Lugar de expedición">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_fecha_nacimiento">Fecha de nacimiento:</label>
-                                <input type="date" id="natural_conyuge_fecha_nacimiento">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_direccion">Dirección:</label>
-                                <input type="text" id="natural_conyuge_direccion" placeholder="Dirección">
-                            </div>
+                        <div class="form-group">
+                            <label for="conyuge_segundo_nombre">Segundo nombre:</label>
+                            <input type="text" id="conyuge_segundo_nombre" name="conyuge_segundo_nombre" placeholder="Segundo nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_conyuge_telefono">Teléfono:</label>
-                                <input type="tel" id="natural_conyuge_telefono" placeholder="Teléfono"
-                                    pattern="[0-9]{10}">
-                            </div>
+                        <div class="form-group">
+                            <label for="conyuge_primer_apellido">Primer apellido:</label>
+                            <input type="text" id="conyuge_primer_apellido" name="conyuge_primer_apellido" placeholder="Primer apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_segundo_apellido">Segundo apellido:</label>
+                            <input type="text" id="conyuge_segundo_apellido" name="conyuge_segundo_apellido" placeholder="Segundo apellido">
+                        </div>
+
+                        <!-- Fila 2 -->
+                        <div class="form-group">
+                            <label for="conyuge_tipo_documento">Tipo de identificación:</label>
+                            <select id="conyuge_tipo_documento" name="conyuge_tipo_documento">
+                                <option value="">Seleccione</option>
+                                <option value="C.C.">Cédula de Ciudadanía</option>
+                                <option value="C.E.">Cédula de Extranjería</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_numero_documento">Número de identificación:</label>
+                            <input type="text" id="conyuge_numero_documento" name="conyuge_numero_documento" placeholder="Número de documento">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_fecha_nacimiento">Fecha de nacimiento:</label>
+                            <input type="date" id="conyuge_fecha_nacimiento" name="conyuge_fecha_nacimiento">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_lugar_nacimiento">Lugar de nacimiento:</label>
+                            <input type="text" id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento" placeholder="Ciudad o municipio">
+                        </div>
+
+                        <!-- Fila 3 -->
+                        <div class="form-group">
+                            <label for="conyuge_empresa">Empresa donde trabaja:</label>
+                            <input type="text" id="conyuge_empresa" name="conyuge_empresa" placeholder="Empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_antiguedad">Antigüedad (años):</label>
+                            <input type="number" id="conyuge_antiguedad" name="conyuge_antiguedad" min="0" placeholder="Años">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_cargo">Cargo u ocupación:</label>
+                            <input type="text" id="conyuge_cargo" name="conyuge_cargo" placeholder="Cargo">
+                        </div>
+                        <div></div>
+
+                        <!-- Fila 4 -->
+                        <div class="form-group">
+                            <label for="conyuge_ciudad_residencia">Ciudad de residencia:</label>
+                            <input type="text" id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia" placeholder="Ciudad">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_direccion">Dirección de residencia:</label>
+                            <input type="text" id="conyuge_direccion" name="conyuge_direccion" placeholder="Dirección">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_celular">Celular:</label>
+                            <input type="tel" id="conyuge_celular" name="conyuge_celular" placeholder="Celular" pattern="[0-9]{10}">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_correo">Correo electrónico:</label>
+                            <input type="email" id="conyuge_correo" name="conyuge_correo" placeholder="Correo">
                         </div>
                     </div>
                 </fieldset>
@@ -243,49 +267,76 @@
                 <!-- Datos Apoderado -->
                 <fieldset>
                     <legend>Datos del Apoderado (Opcional)</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_apoderado_nombre">Nombre completo: <span>(Opcional)</span></label>
-                                <input type="text" id="natural_apoderado_nombre" placeholder="Nombre completo" >
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_tipo_documento">Tipo de documento: <span>(Opcional)</span></label>
-                                <select id="natural_apoderado_tipo_documento" >
-                                    <option value="">Tipo de documento</option>
-                                    <option value="C.C.">Cédula de Ciudadanía</option>
-                                    <option value="C.E.">Cédula de Extranjería</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_numero_documento">Número de documento: <span>(Opcional)</span></label>
-                                <input type="text" id="natural_apoderado_numero_documento"
-                                    placeholder="Número de documento" >
-                            </div>
+                    <div class="form-grid">
+                        <!-- Fila 1 -->
+                        <div class="form-group">
+                            <label for="natural_apoderado_primer_nombre">Primer nombre: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_primer_nombre" name="natural_apoderado_primer_nombre" placeholder="Primer nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_apoderado_fecha_expedicion">Fecha expedición: <span>(Opcional)</span></label>
-                                <input type="date" id="natural_apoderado_fecha_expedicion"
-                                    placeholder="Fecha expedición (DD-MM-AAAA)" >
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?> <span>(Opcional)</span></label>
-                                <select id="natural_apoderado_lugar_expedicion" >
-                                    <option value=""><?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_direccion">Dirección: <span>(Opcional)</span></label>
-                                <input type="text" id="natural_apoderado_direccion" placeholder="Dirección" >
-                            </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_segundo_nombre">Segundo nombre: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_segundo_nombre" name="natural_apoderado_segundo_nombre" placeholder="Segundo nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_apoderado_telefono">Teléfono: <span>(Opcional)</span></label>
-                                <input type="tel" id="natural_apoderado_telefono" placeholder="Teléfono"
-                                    pattern="[0-9]{10}" >
-                            </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_primer_apellido">Primer apellido: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_primer_apellido" name="natural_apoderado_primer_apellido" placeholder="Primer apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_segundo_apellido">Segundo apellido: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_segundo_apellido" name="natural_apoderado_segundo_apellido" placeholder="Segundo apellido">
+                        </div>
+                        <!-- Fila 2 -->
+                        <div class="form-group">
+                            <label for="natural_apoderado_tipo_documento">Tipo de identificación: <span>(Opcional)</span></label>
+                            <select id="natural_apoderado_tipo_documento" name="natural_apoderado_tipo_documento">
+                                <option value="">Tipo de documento</option>
+                                <option value="C.C.">Cédula de Ciudadanía</option>
+                                <option value="C.E.">Cédula de Extranjería</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_numero_documento">Número de identificación: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_numero_documento" name="natural_apoderado_numero_documento" placeholder="Número de documento">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_fecha_nacimiento">Fecha de nacimiento: <span>(Opcional)</span></label>
+                            <input type="date" id="natural_apoderado_fecha_nacimiento" name="natural_apoderado_fecha_nacimiento">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_lugar_nacimiento">Lugar de nacimiento: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_lugar_nacimiento" name="natural_apoderado_lugar_nacimiento" placeholder="Ciudad o municipio">
+                        </div>
+                        <!-- Fila 3 -->
+                        <div class="form-group">
+                            <label for="natural_apoderado_empresa">Empresa donde trabaja: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_empresa" name="natural_apoderado_empresa" placeholder="Empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_antiguedad">Antigüedad (años): <span>(Opcional)</span></label>
+                            <input type="number" id="natural_apoderado_antiguedad" name="natural_apoderado_antiguedad" min="0" placeholder="Años">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_cargo">Cargo u ocupación: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_cargo" name="natural_apoderado_cargo" placeholder="Cargo">
+                        </div>
+                        <div></div>
+                        <!-- Espacio vacío -->
+                        <!-- Fila 4 -->
+                        <div class="form-group">
+                            <label for="natural_apoderado_ciudad_residencia">Ciudad de residencia: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_ciudad_residencia" name="natural_apoderado_ciudad_residencia" placeholder="Ciudad">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_direccion">Dirección de residencia: <span>(Opcional)</span></label>
+                            <input type="text" id="natural_apoderado_direccion" name="natural_apoderado_direccion" placeholder="Dirección">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_celular">Celular: <span>(Opcional)</span></label>
+                            <input type="tel" id="natural_apoderado_celular" name="natural_apoderado_celular" placeholder="Celular" pattern="[0-9]{10}">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_apoderado_correo">Correo electrónico: <span>(Opcional)</span></label>
+                            <input type="email" id="natural_apoderado_correo" name="natural_apoderado_correo" placeholder="Correo">
                         </div>
                     </div>
                 </fieldset>
@@ -591,6 +642,7 @@
                 </button>
             </div>
         </div>
+
         <!-- Paso 3 -->
         <div class="form-step" data-step="3">
             <div id="naturalFields3" style="display:none;">
@@ -606,50 +658,80 @@
 
                     <!-- Campos Asalariado -->
                     <div class="asalariado-fields">
-                        <div class="form-columns">
-                            <div>
-                                <div>
-                                    <label for="natural_empresa">Nombre de la empresa:</label>
-                                    <input type="text" id="natural_empresa" placeholder="Nombre de la empresa">
-                                </div>
-                                <div>
-                                    <label for="natural_cargo">Cargo:</label>
-                                    <input type="text" id="natural_cargo" placeholder="Cargo">
-                                </div>
-                                <div>
-                                    <label for="natural_direccion_empresa">Dirección de la empresa:</label>
-                                    <input type="text" id="natural_direccion_empresa"
-                                        placeholder="Dirección de la empresa">
-                                </div>
+                        <div class="form-grid">
+                            <!-- Fila 1 -->
+                            <div class="form-group">
+                                <label for="natural_empresa">Nombre de la empresa:</label>
+                                <input type="text" id="natural_empresa" name="natural_empresa" placeholder="Nombre de la empresa">
                             </div>
-                            <div>
-                                <div>
-                                    <label for="natural_telefono_empresa">Teléfono empresa:</label>
-                                    <input type="tel" id="natural_telefono_empresa" placeholder="Teléfono empresa"
-                                        pattern="[0-9]{10}">
-                                </div>
-                                <div>
-                                    <label for="natural_ingresos_asalariado">Ingresos mensuales:</label>
-                                    <input type="number" id="natural_ingresos_asalariado"
-                                        placeholder="Ingresos mensuales (COP)">
-                                </div>
+                            <div class="form-group">
+                                <label for="natural_ciudad_empresa">Ciudad:</label>
+                                <input type="text" id="natural_ciudad_empresa" name="natural_ciudad_empresa" placeholder="Ciudad de la empresa">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_direccion_empresa">Dirección:</label>
+                                <input type="text" id="natural_direccion_empresa" name="natural_direccion_empresa" placeholder="Dirección de la empresa">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_telefono_empresa">Celular:</label>
+                                <input type="tel" id="natural_telefono_empresa" name="natural_telefono_empresa" placeholder="Teléfono empresa" pattern="[0-9]{10}">
+                            </div>
+                            <!-- Fila 2 -->
+                            <div class="form-group">
+                                <label for="natural_actividad_economica">Actividad económica:</label>
+                                <input type="text" id="natural_actividad_economica" name="natural_actividad_economica" placeholder="Actividad económica">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_antiguedad">Antigüedad (años):</label>
+                                <input type="number" id="natural_antiguedad" name="natural_antiguedad" placeholder="Antigüedad en años" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_cargo">Cargo:</label>
+                                <input type="text" id="natural_cargo" name="natural_cargo" placeholder="Cargo">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_ingresos_asalariado">Ingresos mensuales:</label>
+                                <input type="number" id="natural_ingresos_asalariado" name="natural_ingresos_asalariado" placeholder="Ingresos mensuales (COP)">
                             </div>
                         </div>
                     </div>
 
                     <!-- Campos No Asalariado -->
                     <div class="no-asalariado-fields" style="display: none;">
-                        <div class="form-columns">
-                            <div>
-                                <div>
-                                    <label for="natural_actividad">Actividad económica:</label>
-                                    <input type="text" id="natural_actividad" placeholder="Actividad económica">
-                                </div>
-                                <div>
-                                    <label for="natural_ingresos_no_asalariado">Ingresos mensuales:</label>
-                                    <input type="number" id="natural_ingresos_no_asalariado"
-                                        placeholder="Ingresos mensuales (COP)">
-                                </div>
+                        <div class="form-grid">
+                            <!-- Fila 1 -->
+                            <div class="form-group">
+                                <label for="natural_negocio_nombre">Nombre de la empresa o negocio:</label>
+                                <input type="text" id="natural_negocio_nombre" name="natural_negocio_nombre" placeholder="Nombre de la empresa o negocio">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_negocio_ciudad">Ciudad:</label>
+                                <input type="text" id="natural_negocio_ciudad" name="natural_negocio_ciudad" placeholder="Ciudad">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_negocio_direccion">Dirección:</label>
+                                <input type="text" id="natural_negocio_direccion" name="natural_negocio_direccion" placeholder="Dirección">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_negocio_celular">Celular:</label>
+                                <input type="tel" id="natural_negocio_celular" name="natural_negocio_celular" placeholder="Celular" pattern="[0-9]{10}">
+                            </div>
+                            <!-- Fila 2 -->
+                            <div class="form-group">
+                                <label for="natural_actividad">Actividad económica:</label>
+                                <input type="text" id="natural_actividad" name="natural_actividad" placeholder="Actividad económica">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_antiguedad">Antigüedad (años):</label>
+                                <input type="number" id="natural_antiguedad" name="natural_antiguedad" placeholder="Antigüedad en años" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_cargo">Cargo:</label>
+                                <input type="text" id="natural_cargo" name="natural_cargo" placeholder="Cargo u ocupación">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_correo">Correo:</label>
+                                <input type="email" id="natural_correo" name="natural_correo" placeholder="Correo electrónico">
                             </div>
                         </div>
                     </div>
@@ -658,66 +740,67 @@
                 <!-- Información Financiera -->
                 <fieldset>
                     <legend>Información Financiera</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_ingresos_mensuales">Ingresos mensuales:</label>
-                                <input type="number" id="natural_ingresos_mensuales"
-                                    placeholder="Ingresos mensuales (COP)" required>
-                            </div>
-                            <div>
-                                <label for="natural_egresos_mensuales">Egresos mensuales:</label>
-                                <input type="number" id="natural_egresos_mensuales"
-                                    placeholder="Egresos mensuales (COP)" required>
-                            </div>
+                    <div class="form-grid-info">
+                        <!-- Fila 1 -->
+                        <div class="form-group">
+                            <label for="natural_ingresos_anuales">Ingresos anuales:</label>
+                            <input type="number" id="natural_ingresos_anuales" name="natural_ingresos_anuales" placeholder="Ingresos anuales (COP)" required>
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_total_activos">Total activos:</label>
-                                <input type="number" id="natural_total_activos" placeholder="Total activos (COP)"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="natural_total_pasivos">Total pasivos:</label>
-                                <input type="number" id="natural_total_pasivos" placeholder="Total pasivos (COP)"
-                                    required>
-                            </div>
+                        <div class="form-group">
+                            <label for="natural_ingresos_mensuales">Ingresos mensuales:</label>
+                            <input type="number" id="natural_ingresos_mensuales" name="natural_ingresos_mensuales" placeholder="Ingresos mensuales (COP)" required>
+                        </div>
+                        <!-- Fila 2 -->
+                        <div class="form-group">
+                            <label for="natural_egresos_anuales">Egresos anuales:</label>
+                            <input type="number" id="natural_egresos_anuales" name="natural_egresos_anuales" placeholder="Egresos anuales (COP)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_egresos_mensuales">Egresos mensuales:</label>
+                            <input type="number" id="natural_egresos_mensuales" name="natural_egresos_mensuales" placeholder="Egresos mensuales (COP)" required>
+                        </div>
+                        <!-- Fila 3 -->
+                        <div class="form-group">
+                            <label for="natural_otros_ingresos_anuales">Otros ingresos (anuales):</label>
+                            <input type="number" id="natural_otros_ingresos_anuales" name="natural_otros_ingresos_anuales" placeholder="Otros ingresos anuales (COP)">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_otros_ingresos_mensuales">Otros ingresos (mensuales):</label>
+                            <input type="number" id="natural_otros_ingresos_mensuales" name="natural_otros_ingresos_mensuales" placeholder="Otros ingresos mensuales (COP)">
+                        </div>
+                        <!-- Fila 4 -->
+                        <div class="form-group">
+                            <label for="natural_total_ingresos_anuales">Total ingresos anuales:</label>
+                            <input type="number" id="natural_total_ingresos_anuales" name="natural_total_ingresos_anuales" placeholder="Total ingresos anuales (COP)">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_total_ingresos_mensuales">Total ingresos mensuales:</label>
+                            <input type="number" id="natural_total_ingresos_mensuales" name="natural_total_ingresos_mensuales" placeholder="Total ingresos mensuales (COP)">
+                        </div>
+                        <!-- Fila 5 -->
+                        <div class="form-group">
+                            <label for="natural_total_activos">Total activos:</label>
+                            <input type="number" id="natural_total_activos" name="natural_total_activos" placeholder="Total activos (COP)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_total_pasivos">Total pasivos:</label>
+                            <input type="number" id="natural_total_pasivos" name="natural_total_pasivos" placeholder="Total pasivos (COP)" required>
+                        </div>
+                        <!-- Fila 6 -->
+                        <div class="form-group">
+                            <label for="natural_concepto_otros_ingresos">Concepto otros ingresos:</label>
+                            <input type="text" id="natural_concepto_otros_ingresos" name="natural_concepto_otros_ingresos" placeholder="Describa los otros ingresos">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_concepto_patrimonio">Concepto patrimonio:</label>
+                            <input type="text" id="natural_concepto_patrimonio" name="natural_concepto_patrimonio" placeholder="Describa el patrimonio">
                         </div>
                     </div>
                 </fieldset>
 
                 <!-- Origen de Fondos -->
-                <fieldset>
-                    <legend>Declaración de Origen de Fondos</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_fuente_fondos">Fuente principal de fondos:</label>
-                                <input type="text" id="natural_fuente_fondos" placeholder="Fuente principal de fondos"
-                                    required>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="natural_descripcion_fondos">Descripción del origen de los fondos:</label>
-                                <textarea id="natural_descripcion_fondos"
-                                    placeholder="Descripción detallada del origen de los fondos..." required></textarea>
-                            </div>
-
-                        </div>
-                    </div>
-                </fieldset>
 
                 <!-- Operaciones Internacionales -->
-                <fieldset>
-                    <legend>Operaciones Internacionales</legend>
-                    <div class="form-check check-input">
-                        <label>
-                            <input type="checkbox" id="natural_realiza_operaciones"> ¿Realiza operaciones
-                            internacionales?
-                        </label>
-                    </div>
-                </fieldset>
 
                 <!-- Personas PEPs -->
                 <fieldset>
@@ -1019,21 +1102,6 @@
                             <input type="file" id="fotocopia_rut" name="fotocopia_rut" accept=".pdf,.jpg,.png" required>
                             <small class="helper-text">(Vigente, Formato PDF o imagen .jpg, .png)</small>
                         </div>
-                        <!-- Certificación Bancaria Extranjera -->
-                        <!-- <div class="documento-item">
-                            <label for="cert_bancaria_ext">Certificación Bancaria Extranjera*</label>
-                            <input type="file" id="cert_bancaria_ext" name="cert_bancaria_ext" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Formato PDF o imagen .jpg, .png, máximo 5MB)</small>
-                        </div> -->
-
-                        <!-- Nómina de Servicios Sociales y Documento de Identidad -->
-                        <!-- <div class="documento-item">
-                            <label for="nss_doc_identidad">NSS + Documento Identidad*</label>
-                            <input type="file" id="nss_doc_identidad" name="nss_doc_identidad" accept=".pdf,.jpg,.png"
-                                required multiple>
-                            <small class="helper-text">(Formato PDF o imagen .jpg, .png)</small>
-                        </div> -->
 
                         <!-- Certificación Bancaria Local -->
                         <div class="documento-item">
@@ -1042,21 +1110,6 @@
                             <small class="helper-text">(Formato PDF o imagen .jpg, .png)</small>
                         </div>
 
-                        
-
-                        <!-- Certificados Universitarios -->
-                        <!-- <div class="documento-item">
-                            <label for="cert_universitarios">Certificados Académicos*</label>
-                            <input type="file" id="cert_universitarios" name="cert_universitarios" accept=".pdf,"
-                                required multiple>
-                            <small class="helper-text">(Todos los títulos en un solo PDF)</small>
-                        </div> -->
-
-                        
-
-                        
-
-                        
                     </div>
                 </fieldset>
 
@@ -1082,22 +1135,6 @@
                                 .jpg, .png)</small>
                         </div>
 
-                        <!-- Certificación Bancaria Extranjera -->
-                        <!-- <div class="documento-item">
-                            <label for="cert_bancaria_ext">Certificación Bancaria Extranjera*</label>
-                            <input type="file" id="cert_bancaria_ext" name="cert_bancaria_ext" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Formato PDF o imagen .jpg, .png, máximo 5MB)</small>
-                        </div> -->
-
-                        <!-- PTIN Identificación Preparador -->
-                        <!-- <div class="documento-item">
-                            <label for="ptin_identificacion_preparador">PTIN Preparador Fiscal*</label>
-                            <input type="file" id="ptin_identificacion_preparador" name="ptin_identificacion_preparador"
-                                accept=".pdf,.jpg,.png" required>
-                            <small class="helper-text">(Documento vigente, formato PDF o imagen .jpg, .png)</small>
-                        </div> -->
-
                         <!-- ITIN Identificación Contribuyente -->
                         <div class="documento-item">
                             <label for="itin_identificacion_contribuyente">ITIN Contribuyente*</label>
@@ -1122,15 +1159,6 @@
                                 accept=".pdf,.jpg,.png" required>
                             <small class="helper-text">(Documento vigente, formato PDF o imagen .jpg, .png)</small>
                         </div>
-
-                        <!-- Poder de Apoderado -->
-                        <!-- <div class="documento-item">
-                            <label for="poder_apoderado">Poder de Apoderado*</label>
-                            <input type="file" id="poder_apoderado" name="poder_apoderado" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Escritura pública vigente, formato PDF o imagen .jpg,
-                                .png)</small>
-                        </div> -->
 
                         <!-- Declaración de Renta -->
                         <div class="documento-item">

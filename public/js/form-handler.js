@@ -287,9 +287,16 @@ function populateSelect(selectId, optionsData) {
                 } else {
                     populateSelect('natural_lugar_expedicion', select2Data);
                     populateSelect('natural_lugar_nacimiento', select2Data);
-                    populateSelect('natural_apoderado_lugar_expedicion', select2Data);
                     populateSelect('natural_banco', select1Data);
                     populateSelect('natural_coordinacion', select3Data);
+                    populateSelect('natural_ciudad_residencia', select2Data);
+                    populateSelect('conyuge_lugar_nacimiento', select2Data);
+                    populateSelect('conyuge_ciudad_residencia', select2Data);
+                    populateSelect('natural_apoderado_lugar_nacimiento', select2Data);
+                    populateSelect('natural_apoderado_ciudad_residencia', select2Data);
+                    populateSelect('natural_ciudad_empresa', select2Data);
+                    populateSelect('natural_negocio_ciudad', select2Data);
+
 
                 }
 
@@ -414,51 +421,71 @@ function populateSelect(selectId, optionsData) {
         if (tipoPersona === 'natural') {
             // Datos Personales
             const datosPersonales = {
-                nombre: document.getElementById('natural_nombre').value,
+                primer_nombre: document.getElementById('natural_primer_nombre').value,
+                segundo_nombre: document.getElementById('natural_segundo_nombre').value,
+                primer_apellido: document.getElementById('natural_primer_apellido').value,
+                segundo_apellido: document.getElementById('natural_segundo_apellido').value,
                 tipo_documento: document.getElementById('natural_tipo_documento').value,
                 numero_documento: document.getElementById('natural_numero_documento').value,
-                coordinacion: document.getElementById('natural_coordinacion').value,
                 fecha_expedicion: document.getElementById('natural_fecha_expedicion').value,
                 lugar_expedicion: document.getElementById('natural_lugar_expedicion').value,
-                lugar_nacimiento: document.getElementById('natural_lugar_nacimiento').value,
                 fecha_nacimiento: document.getElementById('natural_fecha_nacimiento').value,
-                direccion: document.getElementById('natural_direccion').value,
-                telefono: document.getElementById('natural_telefono').value,
-                correo: document.getElementById('natural_correo').value,
+                lugar_nacimiento: document.getElementById('natural_lugar_nacimiento').value,
+                sexo: document.getElementById('natural_sexo').value,
                 nacionalidad: document.getElementById('natural_nacionalidad').value,
+                ciudad_residencia: document.getElementById('natural_ciudad_residencia').value,
+                direccion: document.getElementById('natural_direccion').value,
+                correo: document.getElementById('natural_correo').value,
+                celular: document.getElementById('natural_celular').value,
                 estado_civil: document.getElementById('natural_estado_civil').value,
                 ocupacion: document.getElementById('natural_ocupacion').value,
-                numero_cuenta: document.getElementById('natural_numero_cuenta').value,
-                tipo_cuenta: document.getElementById('natural_tipo_cuenta').value,
-                banco: document.getElementById('natural_banco').value,
                 tipo_vivienda: document.getElementById('natural_tipo_vivienda').value,
                 nivel_estudio: document.getElementById('natural_nivel_estudio').value,
-                sexo: document.getElementById('natural_sexo').value,
+                banco: document.getElementById('natural_banco').value,
+                tipo_cuenta: document.getElementById('natural_tipo_cuenta').value,
+                numero_cuenta: document.getElementById('natural_numero_cuenta').value,
+                coordinacion: document.getElementById('natural_coordinacion').value,
             };
             formData.append('datos_personales', JSON.stringify(datosPersonales));
 
             // Datos Cónyuge
             const conyugeData = {
-                nombre: document.getElementById('natural_conyuge_nombre').value,
-                tipo_documento: document.getElementById('natural_conyuge_tipo_documento').value,
-                numero_documento: document.getElementById('natural_conyuge_numero_documento').value,
-                fecha_expedicion: document.getElementById('natural_conyuge_fecha_expedicion').value,
-                lugar_expedicion: document.getElementById('natural_conyuge_lugar_expedicion').value,
-                fecha_nacimiento: document.getElementById('natural_conyuge_fecha_nacimiento').value,
-                direccion: document.getElementById('natural_conyuge_direccion').value,
-                telefono: document.getElementById('natural_conyuge_telefono').value
+                primer_nombre: document.getElementById('conyuge_primer_nombre').value,
+                segundo_nombre: document.getElementById('conyuge_segundo_nombre').value,
+                primer_apellido: document.getElementById('conyuge_primer_apellido').value,
+                segundo_apellido: document.getElementById('conyuge_segundo_apellido').value,
+                tipo_documento: document.getElementById('conyuge_tipo_documento').value,
+                numero_documento: document.getElementById('conyuge_numero_documento').value,
+                fecha_nacimiento: document.getElementById('conyuge_fecha_nacimiento').value,
+                lugar_nacimiento: document.getElementById('conyuge_lugar_nacimiento').value,
+                empresa: document.getElementById('conyuge_empresa').value,
+                antiguedad: document.getElementById('conyuge_antiguedad').value,
+                cargo: document.getElementById('conyuge_cargo').value,
+                ciudad_residencia: document.getElementById('conyuge_ciudad_residencia').value,
+                direccion: document.getElementById('conyuge_direccion').value,
+                celular: document.getElementById('conyuge_celular').value,
+                correo: document.getElementById('conyuge_correo').value
             };
+
             formData.append('datos_conyuge', JSON.stringify(conyugeData));
 
             // Datos Apoderado
             const apoderadoData = {
-                nombre: document.getElementById('natural_apoderado_nombre').value,
+                primer_nombre: document.getElementById('natural_apoderado_primer_nombre').value,
+                segundo_nombre: document.getElementById('natural_apoderado_segundo_nombre').value,
+                primer_apellido: document.getElementById('natural_apoderado_primer_apellido').value,
+                segundo_apellido: document.getElementById('natural_apoderado_segundo_apellido').value,
                 tipo_documento: document.getElementById('natural_apoderado_tipo_documento').value,
                 numero_documento: document.getElementById('natural_apoderado_numero_documento').value,
-                fecha_expedicion: document.getElementById('natural_apoderado_fecha_expedicion').value,
-                lugar_expedicion: document.getElementById('natural_apoderado_lugar_expedicion').value,
+                fecha_nacimiento: document.getElementById('natural_apoderado_fecha_nacimiento').value,
+                lugar_nacimiento: document.getElementById('natural_apoderado_lugar_nacimiento').value,
+                empresa: document.getElementById('natural_apoderado_empresa').value,
+                antiguedad: document.getElementById('natural_apoderado_antiguedad').value,
+                cargo: document.getElementById('natural_apoderado_cargo').value,
+                ciudad_residencia: document.getElementById('natural_apoderado_ciudad_residencia').value,
                 direccion: document.getElementById('natural_apoderado_direccion').value,
-                telefono: document.getElementById('natural_apoderado_telefono').value
+                celular: document.getElementById('natural_apoderado_celular').value,
+                correo: document.getElementById('natural_apoderado_correo').value
             };
             formData.append('datos_apoderado', JSON.stringify(apoderadoData));
 
@@ -467,41 +494,59 @@ function populateSelect(selectId, optionsData) {
             if (actividadType === 'asalariado') {
                 const asalariadoData = {
                     empresa: document.getElementById('natural_empresa').value,
-                    cargo: document.getElementById('natural_cargo').value,
+                    ciudad_empresa: document.getElementById('natural_ciudad_empresa').value,
                     direccion_empresa: document.getElementById('natural_direccion_empresa').value,
                     telefono_empresa: document.getElementById('natural_telefono_empresa').value,
+                    actividad_economica: document.getElementById('natural_actividad_economica').value,
+                    antiguedad: document.getElementById('natural_antiguedad').value,
+                    cargo: document.getElementById('natural_cargo').value,
                     ingresos_mensuales: document.getElementById('natural_ingresos_asalariado').value
                 };
                 formData.append('actividad_economica_asalariado', JSON.stringify(asalariadoData));
             } else {
                 const noAsalariadoData = {
-                    actividad: document.getElementById('natural_actividad').value,
-                    ingresos_mensuales: document.getElementById('natural_ingresos_no_asalariado').value
+                    negocio_nombre: document.getElementById('natural_negocio_nombre').value,
+                    negocio_ciudad: document.getElementById('natural_negocio_ciudad').value,
+                    negocio_direccion: document.getElementById('natural_negocio_direccion').value,
+                    negocio_celular: document.getElementById('natural_negocio_celular').value,
+                    actividad_economica: document.getElementById('natural_actividad').value,
+                    antiguedad: document.getElementById('natural_antiguedad').value,
+                    cargo: document.getElementById('natural_cargo').value,
+                    correo: document.getElementById('natural_correo').value
                 };
                 formData.append('actividad_economica_no_asalariado', JSON.stringify(noAsalariadoData));
             }
 
             // Información Financiera
             const infoFinanciera = {
+                ingresos_anuales: document.getElementById('natural_ingresos_anuales').value,
                 ingresos_mensuales: document.getElementById('natural_ingresos_mensuales').value,
+                egresos_anuales: document.getElementById('natural_egresos_anuales').value,
                 egresos_mensuales: document.getElementById('natural_egresos_mensuales').value,
+                otros_ingresos_anuales: document.getElementById('natural_otros_ingresos_anuales').value,
+                otros_ingresos_mensuales: document.getElementById('natural_otros_ingresos_mensuales').value,
+                total_ingresos_anuales: document.getElementById('natural_total_ingresos_anuales').value,
+                total_ingresos_mensuales: document.getElementById('natural_total_ingresos_mensuales').value,
                 total_activos: document.getElementById('natural_total_activos').value,
-                total_pasivos: document.getElementById('natural_total_pasivos').value
+                total_pasivos: document.getElementById('natural_total_pasivos').value,
+                concepto_otros_ingresos: document.getElementById('natural_concepto_otros_ingresos').value,
+                concepto_patrimonio: document.getElementById('natural_concepto_patrimonio').value
             };
+
             formData.append('informacion_financiera', JSON.stringify(infoFinanciera));
 
             // Origen de Fondos
-            const origenFondos = {
-                fuente_fondos: document.getElementById('natural_fuente_fondos').value,
-                descripcion_fondos: document.getElementById('natural_descripcion_fondos').value
-            };
-            formData.append('declaracion_origen_fondos', JSON.stringify(origenFondos));
+            // const origenFondos = {
+            //     fuente_fondos: document.getElementById('natural_fuente_fondos').value,
+            //     descripcion_fondos: document.getElementById('natural_descripcion_fondos').value
+            // };
+            // formData.append('declaracion_origen_fondos', JSON.stringify(origenFondos));
 
             // Operaciones Internacionales
-            const operacionesIntl = {
-                realiza_operaciones: document.getElementById('natural_realiza_operaciones').checked
-            };
-            formData.append('actividad_operaciones_internacionales', JSON.stringify(operacionesIntl));
+            // const operacionesIntl = {
+            //     realiza_operaciones: document.getElementById('natural_realiza_operaciones').checked
+            // };
+            // formData.append('actividad_operaciones_internacionales', JSON.stringify(operacionesIntl));
 
             // Personas PEPs
             const personasPEPs = {
