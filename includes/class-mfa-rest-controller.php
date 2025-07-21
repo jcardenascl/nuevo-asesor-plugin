@@ -178,8 +178,8 @@ class MFA_REST_Controller extends WP_REST_Controller {
         // Si $select_id es 'opciones_ciudad', podría ser 'geo/cities'
         $external_api_endpoint_map = [
             'opciones_bancos' => 'api/mission/bancos/', // Reemplaza con tu endpoint real
-            'opciones_ciudad'         => 'api/mission/ciudades/',      // Reemplaza con tu endpoint real
-            'opciones_coord_comercial'      => 'api/fabrica/coordinacion_comercial/'
+            'opciones_ciudad'         => 'api/mission/ciudades/obtener_todas_las_ciudades/',      // Reemplaza con tu endpoint real
+            'opciones_coord_comercial'      => 'api/fabrica/coordinacion_comercial/get_all_offices/'
         ];
 
         if ( ! isset( $external_api_endpoint_map[$select_id] ) ) {
@@ -220,8 +220,15 @@ class MFA_REST_Controller extends WP_REST_Controller {
                     'label' => $item['nombre'],
                 ];
             }
-        }
-        else { return new WP_Error('api_data_format_error', __('Formato inesperado de datos de la API externa.','mi-formulario-api'), ['status' => 500]); }
+        } else if (is_array($response_data) && isset($response_data[0]['id']) && isset($response_data[0]['nombre'])) {
+            // Aquí manejamos el caso de array plano de objetos
+            foreach ($response_data as $item) {
+                $formatted_options[] = [
+                    'value' => $item['id'],
+                    'label' => $item['nombre'],
+                ];
+            }
+        } else { return new WP_Error('api_data_format_error', __('Formato inesperado de datos de la API externa.','mi-formulario-api'), ['status' => 500]); }
         return new WP_REST_Response( $formatted_options, 200 );
 
         // Si la API ya devuelve el formato correcto (array de {value, label}):
