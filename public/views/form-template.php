@@ -39,152 +39,150 @@
             <div id="naturalFields" style="display:none;">
                 <!-- Datos Personales -->
                 <fieldset>
-                    <legend><?php esc_html_e('Datos Personales', 'mi-formulario-api'); ?></legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_nombre">
-                                    <?php esc_html_e('Nombre:', 'mi-formulario-api'); ?>
-                                </label>
-                                <input type="text" id="natural_nombre" placeholder="<?php esc_html_e('Nombre completo', 'mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_sexo">
-                                    <?php esc_html_e('Sexo:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_sexo" required>
-                                    <option value=""><?php esc_html_e('Sexo', 'mi-formulario-api'); ?></option>
-                                    <option value="masculino"><?php esc_html_e('Masculino', 'mi-formulario-api'); ?></option>
-                                    <option value="femenino"><?php esc_html_e('Femenino', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_tipo_documento">
-                                    <?php esc_html_e('Tipo de documento:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_tipo_documento" required>
-                                    <option value=""><?php esc_html_e('Tipo de documento', 'mi-formulario-api'); ?></option>
-                                    <option value="C.C."><?php esc_html_e('Cédula de Ciudadanía', 'mi-formulario-api'); ?></option>
-                                    <option value="C.E."><?php esc_html_e('Cédula de Extranjería', 'mi-formulario-api'); ?></option>
-                                    <option value="Pasaporte"><?php esc_html_e('Pasaporte', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_numero_documento"><?php esc_html_e('Número de documento:', 'mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_numero_documento" placeholder="<?php esc_html_e('Número de documento', 'mi-formulario-api'); ?>"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="natural_coordinacion"><?php esc_html_e('Coordinación:','mi-formulario-api'); ?></label>
-                                <select id="natural_coordinacion" required>
-                                    <option value=""><?php esc_html_e('Coordinación','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_fecha_expedicion"><?php esc_html_e('Fecha expedición documento:','mi-formulario-api'); ?></label>
-                                <input type="date" id="natural_fecha_expedicion"
-                                    placeholder="<?php esc_html_e('Fecha expedición documento (DD-MM-AAAA)','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?> </label>
-                                <select id="natural_lugar_expedicion" required>
-                                    <option value=""><?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="natural_lugar_nacimiento"><?php esc_html_e('Lugar de nacimiento:','mi-formulario-api'); ?> :</label>
-                                <select id="natural_lugar_nacimiento" required>
-                                    <option value=""><?php esc_html_e('Lugar de nacimiento','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_fecha_nacimiento"><?php esc_html_e('Fecha de nacimiento:','mi-formulario-api'); ?></label>
-                                <input type="date" id="natural_fecha_nacimiento" required>
-                            </div>
-                            <div>
-                                <label for="natural_direccion"><?php esc_html_e('Dirección completa:','mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_direccion" placeholder="<?php esc_html_e('Dirección completa','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_telefono"><?php esc_html_e('Teléfono:','mi-formulario-api'); ?></label>
-                                <input type="tel" id="natural_telefono" placeholder="<?php esc_html_e('Teléfono','mi-formulario-api'); ?>" pattern="[0-9]{10}"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="natural_correo"><?php esc_html_e('Correo electrónico:','mi-formulario-api'); ?></label>
-                                <input type="email" id="natural_correo" placeholder="<?php esc_html_e('Correo electrónico','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_nacionalidad"><?php esc_html_e('Nacionalidad:','mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_nacionalidad" placeholder="<?php esc_html_e('Nacionalidad','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_estado_civil"><?php esc_html_e('Estado civil:','mi-formulario-api'); ?></label>
-                                <select id="natural_estado_civil" required>
-                                    <option value=""><?php esc_html_e('Estado civil','mi-formulario-api'); ?></option>
-                                    <option value="Soltero"><?php esc_html_e('Soltero','mi-formulario-api'); ?></option>
-                                    <option value="Casado"><?php esc_html_e('Casado','mi-formulario-api'); ?></option>
-                                    <option value="Divorciado"><?php esc_html_e('Divorciado','mi-formulario-api'); ?></option>
-                                    <option value="Viudo"><?php esc_html_e('Viudo','mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="natural_ocupacion"><?php esc_html_e('Ocupación:','mi-formulario-api'); ?></label>
-                                <input type="text" id="natural_ocupacion" placeholder="<?php esc_html_e('Ocupación','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_numero_cuenta"><?php esc_html_e('Número de Cuenta:','mi-formulario-api'); ?></label>
-                                <input type="number" id="natural_numero_cuenta" placeholder="<?php esc_html_e('Número de cuenta','mi-formulario-api'); ?>" required>
-                            </div>
-                            <div>
-                                <label for="natural_tipo_cuenta">
-                                    <?php esc_html_e('Tipo de cuenta:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_tipo_cuenta" required>
-                                    <option value=""><?php esc_html_e('Tipo de cuenta', 'mi-formulario-api'); ?></option>
-                                    <option value="corriente"><?php esc_html_e('Corriente', 'mi-formulario-api'); ?></option>
-                                    <option value="ahorro"><?php esc_html_e('Ahorro', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="natural_banco">
-                                    <?php esc_html_e('Banco:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_banco" required>
-                                    <option value=""><?php esc_html_e('Banco', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="natural_tipo_vivienda">
-                                    <?php esc_html_e('Tipo de vivienda:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_tipo_vivienda" required>
-                                    <option value=""><?php esc_html_e('Tipo de vivienda', 'mi-formulario-api'); ?></option>
-                                    <option value="arrendada"><?php esc_html_e('Arrendada', 'mi-formulario-api'); ?></option>
-                                    <option value="propia"><?php esc_html_e('Propia', 'mi-formulario-api'); ?></option>
-                                    <option value="familiar"><?php esc_html_e('Familiar', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="natural_nivel_estudio">
-                                    <?php esc_html_e('Nivel de estudio:', 'mi-formulario-api'); ?>
-                                </label>
-                                <select id="natural_nivel_estudio" required>
-                                    <option value=""><?php esc_html_e('Nivel de estudio', 'mi-formulario-api'); ?></option>
-                                    <option value="basica"><?php esc_html_e('Educación Básica', 'mi-formulario-api'); ?></option>
-                                    <option value="media"><?php esc_html_e('Educación Media', 'mi-formulario-api'); ?></option>
-                                    <option value="superior"><?php esc_html_e('Educación Superior', 'mi-formulario-api'); ?></option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                   <legend><?php esc_html_e('Datos Personales', 'mi-formulario-api'); ?></legend>
+                   <div class="form-grid">
+                      <!-- Fila 1 -->
+                      <div class="form-group">
+                         <label for="natural_primer_nombre">Primer nombre</label>
+                         <input type="text" id="natural_primer_nombre" name="natural_primer_nombre" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_segundo_nombre">Segundo nombre</label>
+                         <input type="text" id="natural_segundo_nombre" name="natural_segundo_nombre">
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_primer_apellido">Primer apellido</label>
+                         <input type="text" id="natural_primer_apellido" name="natural_primer_apellido" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_segundo_apellido">Segundo apellido</label>
+                         <input type="text" id="natural_segundo_apellido" name="natural_segundo_apellido">
+                      </div>
+                      <!-- Fila 2 -->
+                      <div class="form-group">
+                         <label for="natural_tipo_documento">Tipo de documento</label>
+                         <select id="natural_tipo_documento" name="natural_tipo_documento" required>
+                            <option value="">Seleccione</option>
+                            <option value="C.C.">Cédula de Ciudadanía</option>
+                            <option value="C.E.">Cédula de Extranjería</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_numero_documento">Número de documento</label>
+                         <input type="text" id="natural_numero_documento" name="natural_numero_documento" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_fecha_expedicion">Fecha de expedición</label>
+                         <input type="date" id="natural_fecha_expedicion" name="natural_fecha_expedicion" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_lugar_expedicion">Lugar de expedición</label>
+                         <select id="natural_lugar_expedicion" name="natural_lugar_expedicion" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <!-- Fila 3 -->
+                      <div class="form-group">
+                         <label for="natural_fecha_nacimiento">Fecha de nacimiento</label>
+                         <input type="date" id="natural_fecha_nacimiento" name="natural_fecha_nacimiento" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_lugar_nacimiento">Lugar de nacimiento</label>
+                         <select id="natural_lugar_nacimiento" name="natural_lugar_nacimiento" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_sexo">Sexo</label>
+                         <select id="natural_sexo" name="natural_sexo" required>
+                            <option value="">Seleccione</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_nacionalidad">Nacionalidad</label>
+                         <input type="text" id="natural_nacionalidad" name="natural_nacionalidad" required>
+                      </div>
+                      <!-- Fila 4 -->
+                      <div class="form-group">
+                         <label for="natural_ciudad_residencia">Ciudad de residencia</label>
+                         <select id="natural_ciudad_residencia" name="natural_ciudad_residencia" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_direccion">Dirección de residencia</label>
+                         <input type="text" id="natural_direccion" name="natural_direccion" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_correo">Correo electrónico</label>
+                         <input type="email" id="natural_correo" name="natural_correo" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_celular">Celular</label>
+                         <input type="tel" id="natural_celular" name="natural_celular" pattern="[0-9]{10}" required>
+                      </div>
+                      <!-- Fila 5 -->
+                      <div class="form-group">
+                         <label for="natural_estado_civil">Estado civil</label>
+                         <select id="natural_estado_civil" name="natural_estado_civil" required>
+                            <option value="">Seleccione</option>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Divorciado">Divorciado</option>
+                            <option value="Viudo">Viudo</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_ocupacion">Ocupación</label>
+                         <input type="text" id="natural_ocupacion" name="natural_ocupacion" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_tipo_vivienda">Tipo de vivienda</label>
+                         <select id="natural_tipo_vivienda" name="natural_tipo_vivienda" required>
+                            <option value="">Seleccione</option>
+                            <option value="arrendada">Arrendada</option>
+                            <option value="propia">Propia</option>
+                            <option value="familiar">Familiar</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_nivel_estudio">Nivel de estudio</label>
+                         <select id="natural_nivel_estudio" name="natural_nivel_estudio" required>
+                            <option value="">Seleccione</option>
+                            <option value="basica">Educación Básica</option>
+                            <option value="media">Educación Media</option>
+                            <option value="superior">Educación Superior</option>
+                         </select>
+                      </div>
+                      <!-- Fila 6 -->
+                      <div class="form-group">
+                         <label for="natural_banco">Banco</label>
+                         <select id="natural_banco" name="natural_banco" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_tipo_cuenta">Tipo de cuenta</label>
+                         <select id="natural_tipo_cuenta" name="natural_tipo_cuenta" required>
+                            <option value="">Seleccione</option>
+                            <option value="corriente">Corriente</option>
+                            <option value="ahorro">Ahorro</option>
+                         </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_numero_cuenta">Número de cuenta</label>
+                         <input type="number" id="natural_numero_cuenta" name="natural_numero_cuenta" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="natural_coordinacion">Coordinación</label>
+                         <select id="natural_coordinacion" name="natural_coordinacion" required>
+                            <option value="">Seleccione</option>
+                         </select>
+                      </div>
+                   </div>
                 </fieldset>
 
                 <!-- Datos Cónyuge -->
