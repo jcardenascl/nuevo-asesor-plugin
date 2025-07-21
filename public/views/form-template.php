@@ -188,52 +188,78 @@
                 <!-- Datos Cónyuge -->
                 <fieldset class="conyuge-section" style="display: none;">
                     <legend>Datos del Cónyuge</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_conyuge_nombre">Nombre completo:</label>
-                                <input type="text" id="natural_conyuge_nombre" placeholder="Nombre completo">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_tipo_documento">Tipo de documento:</label>
-                                <select id="natural_conyuge_tipo_documento">
-                                    <option value="">Tipo de documento</option>
-                                    <option value="C.C.">Cédula de Ciudadanía</option>
-                                    <option value="C.E.">Cédula de Extranjería</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_numero_documento">Número de documento:</label>
-                                <input type="text" id="natural_conyuge_numero_documento"
-                                    placeholder="Número de documento">
-                            </div>
+                    <div class="form-grid">
+                        <!-- Fila 1 -->
+                        <div class="form-group">
+                            <label for="conyuge_primer_nombre">Primer nombre:</label>
+                            <input type="text" id="conyuge_primer_nombre" name="conyuge_primer_nombre" placeholder="Primer nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_conyuge_fecha_expedicion">Fecha expedición:</label>
-                                <input type="date" id="natural_conyuge_fecha_expedicion"
-                                    placeholder="Fecha expedición (DD-MM-AAAA)">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_lugar_expedicion">Lugar de expedición:</label>
-                                <input type="text" id="natural_conyuge_lugar_expedicion"
-                                    placeholder="Lugar de expedición">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_fecha_nacimiento">Fecha de nacimiento:</label>
-                                <input type="date" id="natural_conyuge_fecha_nacimiento">
-                            </div>
-                            <div>
-                                <label for="natural_conyuge_direccion">Dirección:</label>
-                                <input type="text" id="natural_conyuge_direccion" placeholder="Dirección">
-                            </div>
+                        <div class="form-group">
+                            <label for="conyuge_segundo_nombre">Segundo nombre:</label>
+                            <input type="text" id="conyuge_segundo_nombre" name="conyuge_segundo_nombre" placeholder="Segundo nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_conyuge_telefono">Teléfono:</label>
-                                <input type="tel" id="natural_conyuge_telefono" placeholder="Teléfono"
-                                    pattern="[0-9]{10}">
-                            </div>
+                        <div class="form-group">
+                            <label for="conyuge_primer_apellido">Primer apellido:</label>
+                            <input type="text" id="conyuge_primer_apellido" name="conyuge_primer_apellido" placeholder="Primer apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_segundo_apellido">Segundo apellido:</label>
+                            <input type="text" id="conyuge_segundo_apellido" name="conyuge_segundo_apellido" placeholder="Segundo apellido">
+                        </div>
+
+                        <!-- Fila 2 -->
+                        <div class="form-group">
+                            <label for="conyuge_tipo_documento">Tipo de identificación:</label>
+                            <select id="conyuge_tipo_documento" name="conyuge_tipo_documento">
+                                <option value="">Seleccione</option>
+                                <option value="C.C.">Cédula de Ciudadanía</option>
+                                <option value="C.E.">Cédula de Extranjería</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_numero_documento">Número de identificación:</label>
+                            <input type="text" id="conyuge_numero_documento" name="conyuge_numero_documento" placeholder="Número de documento">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_fecha_nacimiento">Fecha de nacimiento:</label>
+                            <input type="date" id="conyuge_fecha_nacimiento" name="conyuge_fecha_nacimiento">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_lugar_nacimiento">Lugar de nacimiento:</label>
+                            <input type="text" id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento" placeholder="Ciudad o municipio">
+                        </div>
+
+                        <!-- Fila 3 -->
+                        <div class="form-group">
+                            <label for="conyuge_empresa">Empresa donde trabaja:</label>
+                            <input type="text" id="conyuge_empresa" name="conyuge_empresa" placeholder="Empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_antiguedad">Antigüedad (años):</label>
+                            <input type="number" id="conyuge_antiguedad" name="conyuge_antiguedad" min="0" placeholder="Años">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_cargo">Cargo u ocupación:</label>
+                            <input type="text" id="conyuge_cargo" name="conyuge_cargo" placeholder="Cargo">
+                        </div>
+                        <div></div>
+
+                        <!-- Fila 4 -->
+                        <div class="form-group">
+                            <label for="conyuge_ciudad_residencia">Ciudad de residencia:</label>
+                            <input type="text" id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia" placeholder="Ciudad">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_direccion">Dirección de residencia:</label>
+                            <input type="text" id="conyuge_direccion" name="conyuge_direccion" placeholder="Dirección">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_celular">Celular:</label>
+                            <input type="tel" id="conyuge_celular" name="conyuge_celular" placeholder="Celular" pattern="[0-9]{10}">
+                        </div>
+                        <div class="form-group">
+                            <label for="conyuge_correo">Correo electrónico:</label>
+                            <input type="email" id="conyuge_correo" name="conyuge_correo" placeholder="Correo">
                         </div>
                     </div>
                 </fieldset>
@@ -241,49 +267,76 @@
                 <!-- Datos Apoderado -->
                 <fieldset>
                     <legend>Datos del Apoderado (Opcional)</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_apoderado_nombre">Nombre completo: <span>(Opcional)</span></label>
-                                <input type="text" id="natural_apoderado_nombre" placeholder="Nombre completo" >
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_tipo_documento">Tipo de documento: <span>(Opcional)</span></label>
-                                <select id="natural_apoderado_tipo_documento" >
-                                    <option value="">Tipo de documento</option>
-                                    <option value="C.C.">Cédula de Ciudadanía</option>
-                                    <option value="C.E.">Cédula de Extranjería</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_numero_documento">Número de documento: <span>(Opcional)</span></label>
-                                <input type="text" id="natural_apoderado_numero_documento"
-                                    placeholder="Número de documento" >
-                            </div>
+                    <div class="form-grid">
+                        <!-- Fila 1 -->
+                        <div class="form-group">
+                            <label for="apoderado_primer_nombre">Primer nombre: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_primer_nombre" name="apoderado_primer_nombre" placeholder="Primer nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_apoderado_fecha_expedicion">Fecha expedición: <span>(Opcional)</span></label>
-                                <input type="date" id="natural_apoderado_fecha_expedicion"
-                                    placeholder="Fecha expedición (DD-MM-AAAA)" >
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_lugar_expedicion"><?php esc_html_e('Lugar de expedición:','mi-formulario-api'); ?> <span>(Opcional)</span></label>
-                                <select id="natural_apoderado_lugar_expedicion" >
-                                    <option value=""><?php esc_html_e('Lugar de expedición','mi-formulario-api'); ?> </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="natural_apoderado_direccion">Dirección: <span>(Opcional)</span></label>
-                                <input type="text" id="natural_apoderado_direccion" placeholder="Dirección" >
-                            </div>
+                        <div class="form-group">
+                            <label for="apoderado_segundo_nombre">Segundo nombre: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_segundo_nombre" name="apoderado_segundo_nombre" placeholder="Segundo nombre">
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_apoderado_telefono">Teléfono: <span>(Opcional)</span></label>
-                                <input type="tel" id="natural_apoderado_telefono" placeholder="Teléfono"
-                                    pattern="[0-9]{10}" >
-                            </div>
+                        <div class="form-group">
+                            <label for="apoderado_primer_apellido">Primer apellido: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_primer_apellido" name="apoderado_primer_apellido" placeholder="Primer apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_segundo_apellido">Segundo apellido: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_segundo_apellido" name="apoderado_segundo_apellido" placeholder="Segundo apellido">
+                        </div>
+                        <!-- Fila 2 -->
+                        <div class="form-group">
+                            <label for="apoderado_tipo_documento">Tipo de identificación: <span>(Opcional)</span></label>
+                            <select id="apoderado_tipo_documento" name="apoderado_tipo_documento">
+                                <option value="">Tipo de documento</option>
+                                <option value="C.C.">Cédula de Ciudadanía</option>
+                                <option value="C.E.">Cédula de Extranjería</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_numero_documento">Número de identificación: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_numero_documento" name="apoderado_numero_documento" placeholder="Número de documento">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_fecha_nacimiento">Fecha de nacimiento: <span>(Opcional)</span></label>
+                            <input type="date" id="apoderado_fecha_nacimiento" name="apoderado_fecha_nacimiento">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_lugar_nacimiento">Lugar de nacimiento: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_lugar_nacimiento" name="apoderado_lugar_nacimiento" placeholder="Ciudad o municipio">
+                        </div>
+                        <!-- Fila 3 -->
+                        <div class="form-group">
+                            <label for="apoderado_empresa">Empresa donde trabaja: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_empresa" name="apoderado_empresa" placeholder="Empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_antiguedad">Antigüedad (años): <span>(Opcional)</span></label>
+                            <input type="number" id="apoderado_antiguedad" name="apoderado_antiguedad" min="0" placeholder="Años">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_cargo">Cargo u ocupación: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_cargo" name="apoderado_cargo" placeholder="Cargo">
+                        </div>
+                        <div></div>
+                        <!-- Espacio vacío -->
+                        <!-- Fila 4 -->
+                        <div class="form-group">
+                            <label for="apoderado_ciudad_residencia">Ciudad de residencia: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_ciudad_residencia" name="apoderado_ciudad_residencia" placeholder="Ciudad">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_direccion">Dirección de residencia: <span>(Opcional)</span></label>
+                            <input type="text" id="apoderado_direccion" name="apoderado_direccion" placeholder="Dirección">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_celular">Celular: <span>(Opcional)</span></label>
+                            <input type="tel" id="apoderado_celular" name="apoderado_celular" placeholder="Celular" pattern="[0-9]{10}">
+                        </div>
+                        <div class="form-group">
+                            <label for="apoderado_correo">Correo electrónico: <span>(Opcional)</span></label>
+                            <input type="email" id="apoderado_correo" name="apoderado_correo" placeholder="Correo">
                         </div>
                     </div>
                 </fieldset>
@@ -589,6 +642,7 @@
                 </button>
             </div>
         </div>
+
         <!-- Paso 3 -->
         <div class="form-step" data-step="3">
             <div id="naturalFields3" style="display:none;">
