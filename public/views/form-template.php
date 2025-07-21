@@ -225,8 +225,10 @@
                             <input type="date" id="conyuge_fecha_nacimiento" name="conyuge_fecha_nacimiento">
                         </div>
                         <div class="form-group">
-                            <label for="conyuge_lugar_nacimiento">Lugar de nacimiento:</label>
-                            <input type="text" id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento" placeholder="Ciudad o municipio">
+                            <label for="conyuge_lugar_nacimiento">Lugar de nacimiento</label>
+                            <select id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento" required>
+                                <option value="">Seleccione</option>
+                            </select>
                         </div>
 
                         <!-- Fila 3 -->
@@ -247,7 +249,9 @@
                         <!-- Fila 4 -->
                         <div class="form-group">
                             <label for="conyuge_ciudad_residencia">Ciudad de residencia:</label>
-                            <input type="text" id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia" placeholder="Ciudad">
+                            <select id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia" required>
+                                <option value="">Seleccione</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="conyuge_direccion">Dirección de residencia:</label>
@@ -270,24 +274,24 @@
                     <div class="form-grid">
                         <!-- Fila 1 -->
                         <div class="form-group">
-                            <label for="natural_apoderado_primer_nombre">Primer nombre: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_primer_nombre">Primer nombre:</label>
                             <input type="text" id="natural_apoderado_primer_nombre" name="natural_apoderado_primer_nombre" placeholder="Primer nombre">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_segundo_nombre">Segundo nombre: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_segundo_nombre">Segundo nombre:</label>
                             <input type="text" id="natural_apoderado_segundo_nombre" name="natural_apoderado_segundo_nombre" placeholder="Segundo nombre">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_primer_apellido">Primer apellido: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_primer_apellido">Primer apellido:</label>
                             <input type="text" id="natural_apoderado_primer_apellido" name="natural_apoderado_primer_apellido" placeholder="Primer apellido">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_segundo_apellido">Segundo apellido: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_segundo_apellido">Segundo apellido:</label>
                             <input type="text" id="natural_apoderado_segundo_apellido" name="natural_apoderado_segundo_apellido" placeholder="Segundo apellido">
                         </div>
                         <!-- Fila 2 -->
                         <div class="form-group">
-                            <label for="natural_apoderado_tipo_documento">Tipo de identificación: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_tipo_documento">Tipo de identificación:</label>
                             <select id="natural_apoderado_tipo_documento" name="natural_apoderado_tipo_documento">
                                 <option value="">Tipo de documento</option>
                                 <option value="C.C.">Cédula de Ciudadanía</option>
@@ -295,47 +299,51 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_numero_documento">Número de identificación: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_numero_documento">Número de identificación:</label>
                             <input type="text" id="natural_apoderado_numero_documento" name="natural_apoderado_numero_documento" placeholder="Número de documento">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_fecha_nacimiento">Fecha de nacimiento: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_fecha_nacimiento">Fecha de nacimiento:</label>
                             <input type="date" id="natural_apoderado_fecha_nacimiento" name="natural_apoderado_fecha_nacimiento">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_lugar_nacimiento">Lugar de nacimiento: <span>(Opcional)</span></label>
-                            <input type="text" id="natural_apoderado_lugar_nacimiento" name="natural_apoderado_lugar_nacimiento" placeholder="Ciudad o municipio">
+                            <label for="natural_apoderado_lugar_nacimiento">Lugar de nacimiento</label>
+                            <select id="natural_apoderado_lugar_nacimiento" name="natural_apoderado_lugar_nacimiento" required>
+                                <option value="">Seleccione</option>
+                            </select>
                         </div>
                         <!-- Fila 3 -->
                         <div class="form-group">
-                            <label for="natural_apoderado_empresa">Empresa donde trabaja: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_empresa">Empresa donde trabaja:</label>
                             <input type="text" id="natural_apoderado_empresa" name="natural_apoderado_empresa" placeholder="Empresa">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_antiguedad">Antigüedad (años): <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_antiguedad">Antigüedad (años):</label>
                             <input type="number" id="natural_apoderado_antiguedad" name="natural_apoderado_antiguedad" min="0" placeholder="Años">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_cargo">Cargo u ocupación: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_cargo">Cargo u ocupación:</label>
                             <input type="text" id="natural_apoderado_cargo" name="natural_apoderado_cargo" placeholder="Cargo">
                         </div>
                         <div></div>
                         <!-- Espacio vacío -->
                         <!-- Fila 4 -->
                         <div class="form-group">
-                            <label for="natural_apoderado_ciudad_residencia">Ciudad de residencia: <span>(Opcional)</span></label>
-                            <input type="text" id="natural_apoderado_ciudad_residencia" name="natural_apoderado_ciudad_residencia" placeholder="Ciudad">
+                            <label for="natural_apoderado_ciudad_residencia">Ciudad de residencia:</label>
+                            <select id="natural_apoderado_ciudad_residencia" name="natural_apoderado_ciudad_residencia" required>
+                                <option value="">Seleccione</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_direccion">Dirección de residencia: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_direccion">Dirección de residencia:</label>
                             <input type="text" id="natural_apoderado_direccion" name="natural_apoderado_direccion" placeholder="Dirección">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_celular">Celular: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_celular">Celular:</label>
                             <input type="tel" id="natural_apoderado_celular" name="natural_apoderado_celular" placeholder="Celular" pattern="[0-9]{10}">
                         </div>
                         <div class="form-group">
-                            <label for="natural_apoderado_correo">Correo electrónico: <span>(Opcional)</span></label>
+                            <label for="natural_apoderado_correo">Correo electrónico:</label>
                             <input type="email" id="natural_apoderado_correo" name="natural_apoderado_correo" placeholder="Correo">
                         </div>
                     </div>
@@ -666,7 +674,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="natural_ciudad_empresa">Ciudad:</label>
-                                <input type="text" id="natural_ciudad_empresa" name="natural_ciudad_empresa" placeholder="Ciudad de la empresa">
+                                <select id="natural_ciudad_empresa" name="natural_ciudad_empresa" required>
+                                    <option value="">Seleccione</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="natural_direccion_empresa">Dirección:</label>
@@ -706,7 +716,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="natural_negocio_ciudad">Ciudad:</label>
-                                <input type="text" id="natural_negocio_ciudad" name="natural_negocio_ciudad" placeholder="Ciudad">
+                                <select id="natural_negocio_ciudad" name="natural_negocio_ciudad" required>
+                                    <option value="">Seleccione</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="natural_negocio_direccion">Dirección:</label>

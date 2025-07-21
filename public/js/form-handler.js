@@ -287,17 +287,15 @@ function populateSelect(selectId, optionsData) {
                 } else {
                     populateSelect('natural_lugar_expedicion', select2Data);
                     populateSelect('natural_lugar_nacimiento', select2Data);
+                    populateSelect('natural_ciudad_residencia', select2Data);
                     populateSelect('natural_banco', select1Data);
                     populateSelect('natural_coordinacion', select3Data);
-                    populateSelect('natural_ciudad_residencia', select2Data);
                     populateSelect('conyuge_lugar_nacimiento', select2Data);
                     populateSelect('conyuge_ciudad_residencia', select2Data);
                     populateSelect('natural_apoderado_lugar_nacimiento', select2Data);
                     populateSelect('natural_apoderado_ciudad_residencia', select2Data);
                     populateSelect('natural_ciudad_empresa', select2Data);
                     populateSelect('natural_negocio_ciudad', select2Data);
-
-
                 }
 
                 } catch (error) {
