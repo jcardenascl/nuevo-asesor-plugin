@@ -740,7 +740,7 @@
                 <!-- Información Financiera -->
                 <fieldset>
                     <legend>Información Financiera</legend>
-                    <div class="form-grid">
+                    <div class="form-grid-info">
                         <!-- Fila 1 -->
                         <div class="form-group">
                             <label for="natural_ingresos_anuales">Ingresos anuales:</label>
