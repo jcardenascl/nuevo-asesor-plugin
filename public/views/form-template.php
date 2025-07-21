@@ -658,50 +658,80 @@
 
                     <!-- Campos Asalariado -->
                     <div class="asalariado-fields">
-                        <div class="form-columns">
-                            <div>
-                                <div>
-                                    <label for="natural_empresa">Nombre de la empresa:</label>
-                                    <input type="text" id="natural_empresa" placeholder="Nombre de la empresa">
-                                </div>
-                                <div>
-                                    <label for="natural_cargo">Cargo:</label>
-                                    <input type="text" id="natural_cargo" placeholder="Cargo">
-                                </div>
-                                <div>
-                                    <label for="natural_direccion_empresa">Dirección de la empresa:</label>
-                                    <input type="text" id="natural_direccion_empresa"
-                                        placeholder="Dirección de la empresa">
-                                </div>
+                        <div class="form-grid">
+                            <!-- Fila 1 -->
+                            <div class="form-group">
+                                <label for="natural_empresa">Nombre de la empresa:</label>
+                                <input type="text" id="natural_empresa" name="natural_empresa" placeholder="Nombre de la empresa">
                             </div>
-                            <div>
-                                <div>
-                                    <label for="natural_telefono_empresa">Teléfono empresa:</label>
-                                    <input type="tel" id="natural_telefono_empresa" placeholder="Teléfono empresa"
-                                        pattern="[0-9]{10}">
-                                </div>
-                                <div>
-                                    <label for="natural_ingresos_asalariado">Ingresos mensuales:</label>
-                                    <input type="number" id="natural_ingresos_asalariado"
-                                        placeholder="Ingresos mensuales (COP)">
-                                </div>
+                            <div class="form-group">
+                                <label for="natural_ciudad_empresa">Ciudad:</label>
+                                <input type="text" id="natural_ciudad_empresa" name="natural_ciudad_empresa" placeholder="Ciudad de la empresa">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_direccion_empresa">Dirección:</label>
+                                <input type="text" id="natural_direccion_empresa" name="natural_direccion_empresa" placeholder="Dirección de la empresa">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_telefono_empresa">Celular:</label>
+                                <input type="tel" id="natural_telefono_empresa" name="natural_telefono_empresa" placeholder="Teléfono empresa" pattern="[0-9]{10}">
+                            </div>
+                            <!-- Fila 2 -->
+                            <div class="form-group">
+                                <label for="natural_actividad_economica">Actividad económica:</label>
+                                <input type="text" id="natural_actividad_economica" name="natural_actividad_economica" placeholder="Actividad económica">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_antiguedad">Antigüedad (años):</label>
+                                <input type="number" id="natural_antiguedad" name="natural_antiguedad" placeholder="Antigüedad en años" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_cargo">Cargo:</label>
+                                <input type="text" id="natural_cargo" name="natural_cargo" placeholder="Cargo">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_ingresos_asalariado">Ingresos mensuales:</label>
+                                <input type="number" id="natural_ingresos_asalariado" name="natural_ingresos_asalariado" placeholder="Ingresos mensuales (COP)">
                             </div>
                         </div>
                     </div>
 
                     <!-- Campos No Asalariado -->
                     <div class="no-asalariado-fields" style="display: none;">
-                        <div class="form-columns">
-                            <div>
-                                <div>
-                                    <label for="natural_actividad">Actividad económica:</label>
-                                    <input type="text" id="natural_actividad" placeholder="Actividad económica">
-                                </div>
-                                <div>
-                                    <label for="natural_ingresos_no_asalariado">Ingresos mensuales:</label>
-                                    <input type="number" id="natural_ingresos_no_asalariado"
-                                        placeholder="Ingresos mensuales (COP)">
-                                </div>
+                        <div class="form-grid">
+                            <!-- Fila 1 -->
+                            <div class="form-group">
+                                <label for="natural_negocio_nombre">Nombre de la empresa o negocio:</label>
+                                <input type="text" id="natural_negocio_nombre" name="natural_negocio_nombre" placeholder="Nombre de la empresa o negocio">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_negocio_ciudad">Ciudad:</label>
+                                <input type="text" id="natural_negocio_ciudad" name="natural_negocio_ciudad" placeholder="Ciudad">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_negocio_direccion">Dirección:</label>
+                                <input type="text" id="natural_negocio_direccion" name="natural_negocio_direccion" placeholder="Dirección">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_negocio_celular">Celular:</label>
+                                <input type="tel" id="natural_negocio_celular" name="natural_negocio_celular" placeholder="Celular" pattern="[0-9]{10}">
+                            </div>
+                            <!-- Fila 2 -->
+                            <div class="form-group">
+                                <label for="natural_actividad">Actividad económica:</label>
+                                <input type="text" id="natural_actividad" name="natural_actividad" placeholder="Actividad económica">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_antiguedad">Antigüedad (años):</label>
+                                <input type="number" id="natural_antiguedad" name="natural_antiguedad" placeholder="Antigüedad en años" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_cargo">Cargo:</label>
+                                <input type="text" id="natural_cargo" name="natural_cargo" placeholder="Cargo u ocupación">
+                            </div>
+                            <div class="form-group">
+                                <label for="natural_correo">Correo:</label>
+                                <input type="email" id="natural_correo" name="natural_correo" placeholder="Correo electrónico">
                             </div>
                         </div>
                     </div>
@@ -710,66 +740,67 @@
                 <!-- Información Financiera -->
                 <fieldset>
                     <legend>Información Financiera</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_ingresos_mensuales">Ingresos mensuales:</label>
-                                <input type="number" id="natural_ingresos_mensuales"
-                                    placeholder="Ingresos mensuales (COP)" required>
-                            </div>
-                            <div>
-                                <label for="natural_egresos_mensuales">Egresos mensuales:</label>
-                                <input type="number" id="natural_egresos_mensuales"
-                                    placeholder="Egresos mensuales (COP)" required>
-                            </div>
+                    <div class="form-grid">
+                        <!-- Fila 1 -->
+                        <div class="form-group">
+                            <label for="natural_ingresos_anuales">Ingresos anuales:</label>
+                            <input type="number" id="natural_ingresos_anuales" name="natural_ingresos_anuales" placeholder="Ingresos anuales (COP)" required>
                         </div>
-                        <div>
-                            <div>
-                                <label for="natural_total_activos">Total activos:</label>
-                                <input type="number" id="natural_total_activos" placeholder="Total activos (COP)"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="natural_total_pasivos">Total pasivos:</label>
-                                <input type="number" id="natural_total_pasivos" placeholder="Total pasivos (COP)"
-                                    required>
-                            </div>
+                        <div class="form-group">
+                            <label for="natural_ingresos_mensuales">Ingresos mensuales:</label>
+                            <input type="number" id="natural_ingresos_mensuales" name="natural_ingresos_mensuales" placeholder="Ingresos mensuales (COP)" required>
+                        </div>
+                        <!-- Fila 2 -->
+                        <div class="form-group">
+                            <label for="natural_egresos_anuales">Egresos anuales:</label>
+                            <input type="number" id="natural_egresos_anuales" name="natural_egresos_anuales" placeholder="Egresos anuales (COP)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_egresos_mensuales">Egresos mensuales:</label>
+                            <input type="number" id="natural_egresos_mensuales" name="natural_egresos_mensuales" placeholder="Egresos mensuales (COP)" required>
+                        </div>
+                        <!-- Fila 3 -->
+                        <div class="form-group">
+                            <label for="natural_otros_ingresos_anuales">Otros ingresos (anuales):</label>
+                            <input type="number" id="natural_otros_ingresos_anuales" name="natural_otros_ingresos_anuales" placeholder="Otros ingresos anuales (COP)">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_otros_ingresos_mensuales">Otros ingresos (mensuales):</label>
+                            <input type="number" id="natural_otros_ingresos_mensuales" name="natural_otros_ingresos_mensuales" placeholder="Otros ingresos mensuales (COP)">
+                        </div>
+                        <!-- Fila 4 -->
+                        <div class="form-group">
+                            <label for="natural_total_ingresos_anuales">Total ingresos anuales:</label>
+                            <input type="number" id="natural_total_ingresos_anuales" name="natural_total_ingresos_anuales" placeholder="Total ingresos anuales (COP)">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_total_ingresos_mensuales">Total ingresos mensuales:</label>
+                            <input type="number" id="natural_total_ingresos_mensuales" name="natural_total_ingresos_mensuales" placeholder="Total ingresos mensuales (COP)">
+                        </div>
+                        <!-- Fila 5 -->
+                        <div class="form-group">
+                            <label for="natural_total_activos">Total activos:</label>
+                            <input type="number" id="natural_total_activos" name="natural_total_activos" placeholder="Total activos (COP)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_total_pasivos">Total pasivos:</label>
+                            <input type="number" id="natural_total_pasivos" name="natural_total_pasivos" placeholder="Total pasivos (COP)" required>
+                        </div>
+                        <!-- Fila 6 -->
+                        <div class="form-group">
+                            <label for="natural_concepto_otros_ingresos">Concepto otros ingresos:</label>
+                            <input type="text" id="natural_concepto_otros_ingresos" name="natural_concepto_otros_ingresos" placeholder="Describa los otros ingresos">
+                        </div>
+                        <div class="form-group">
+                            <label for="natural_concepto_patrimonio">Concepto patrimonio:</label>
+                            <input type="text" id="natural_concepto_patrimonio" name="natural_concepto_patrimonio" placeholder="Describa el patrimonio">
                         </div>
                     </div>
                 </fieldset>
 
                 <!-- Origen de Fondos -->
-                <fieldset>
-                    <legend>Declaración de Origen de Fondos</legend>
-                    <div class="form-columns">
-                        <div>
-                            <div>
-                                <label for="natural_fuente_fondos">Fuente principal de fondos:</label>
-                                <input type="text" id="natural_fuente_fondos" placeholder="Fuente principal de fondos"
-                                    required>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="natural_descripcion_fondos">Descripción del origen de los fondos:</label>
-                                <textarea id="natural_descripcion_fondos"
-                                    placeholder="Descripción detallada del origen de los fondos..." required></textarea>
-                            </div>
-
-                        </div>
-                    </div>
-                </fieldset>
 
                 <!-- Operaciones Internacionales -->
-                <fieldset>
-                    <legend>Operaciones Internacionales</legend>
-                    <div class="form-check check-input">
-                        <label>
-                            <input type="checkbox" id="natural_realiza_operaciones"> ¿Realiza operaciones
-                            internacionales?
-                        </label>
-                    </div>
-                </fieldset>
 
                 <!-- Personas PEPs -->
                 <fieldset>
@@ -1071,21 +1102,6 @@
                             <input type="file" id="fotocopia_rut" name="fotocopia_rut" accept=".pdf,.jpg,.png" required>
                             <small class="helper-text">(Vigente, Formato PDF o imagen .jpg, .png)</small>
                         </div>
-                        <!-- Certificación Bancaria Extranjera -->
-                        <!-- <div class="documento-item">
-                            <label for="cert_bancaria_ext">Certificación Bancaria Extranjera*</label>
-                            <input type="file" id="cert_bancaria_ext" name="cert_bancaria_ext" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Formato PDF o imagen .jpg, .png, máximo 5MB)</small>
-                        </div> -->
-
-                        <!-- Nómina de Servicios Sociales y Documento de Identidad -->
-                        <!-- <div class="documento-item">
-                            <label for="nss_doc_identidad">NSS + Documento Identidad*</label>
-                            <input type="file" id="nss_doc_identidad" name="nss_doc_identidad" accept=".pdf,.jpg,.png"
-                                required multiple>
-                            <small class="helper-text">(Formato PDF o imagen .jpg, .png)</small>
-                        </div> -->
 
                         <!-- Certificación Bancaria Local -->
                         <div class="documento-item">
@@ -1094,21 +1110,6 @@
                             <small class="helper-text">(Formato PDF o imagen .jpg, .png)</small>
                         </div>
 
-                        
-
-                        <!-- Certificados Universitarios -->
-                        <!-- <div class="documento-item">
-                            <label for="cert_universitarios">Certificados Académicos*</label>
-                            <input type="file" id="cert_universitarios" name="cert_universitarios" accept=".pdf,"
-                                required multiple>
-                            <small class="helper-text">(Todos los títulos en un solo PDF)</small>
-                        </div> -->
-
-                        
-
-                        
-
-                        
                     </div>
                 </fieldset>
 
@@ -1134,22 +1135,6 @@
                                 .jpg, .png)</small>
                         </div>
 
-                        <!-- Certificación Bancaria Extranjera -->
-                        <!-- <div class="documento-item">
-                            <label for="cert_bancaria_ext">Certificación Bancaria Extranjera*</label>
-                            <input type="file" id="cert_bancaria_ext" name="cert_bancaria_ext" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Formato PDF o imagen .jpg, .png, máximo 5MB)</small>
-                        </div> -->
-
-                        <!-- PTIN Identificación Preparador -->
-                        <!-- <div class="documento-item">
-                            <label for="ptin_identificacion_preparador">PTIN Preparador Fiscal*</label>
-                            <input type="file" id="ptin_identificacion_preparador" name="ptin_identificacion_preparador"
-                                accept=".pdf,.jpg,.png" required>
-                            <small class="helper-text">(Documento vigente, formato PDF o imagen .jpg, .png)</small>
-                        </div> -->
-
                         <!-- ITIN Identificación Contribuyente -->
                         <div class="documento-item">
                             <label for="itin_identificacion_contribuyente">ITIN Contribuyente*</label>
@@ -1174,15 +1159,6 @@
                                 accept=".pdf,.jpg,.png" required>
                             <small class="helper-text">(Documento vigente, formato PDF o imagen .jpg, .png)</small>
                         </div>
-
-                        <!-- Poder de Apoderado -->
-                        <!-- <div class="documento-item">
-                            <label for="poder_apoderado">Poder de Apoderado*</label>
-                            <input type="file" id="poder_apoderado" name="poder_apoderado" accept=".pdf,.jpg,.png"
-                                required>
-                            <small class="helper-text">(Escritura pública vigente, formato PDF o imagen .jpg,
-                                .png)</small>
-                        </div> -->
 
                         <!-- Declaración de Renta -->
                         <div class="documento-item">
