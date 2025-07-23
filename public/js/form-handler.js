@@ -119,7 +119,7 @@ function populateSelect(selectId, optionsData) {
         // Mostrar/ocultar datos cónyuge
         document.getElementById('natural_estado_civil').addEventListener('change', function () {
             document.querySelector('.conyuge-section').style.display =
-                this.value === 'Casado' ? 'block' : 'none';
+                this.value === 'C' ? 'block' : 'none';
         });
 
         // Alternar entre actividad económica
@@ -448,42 +448,42 @@ function populateSelect(selectId, optionsData) {
 
             // Datos Cónyuge
             const conyugeData = {
-                primer_nombre: document.getElementById('conyuge_primer_nombre').value,
-                segundo_nombre: document.getElementById('conyuge_segundo_nombre').value,
-                primer_apellido: document.getElementById('conyuge_primer_apellido').value,
-                segundo_apellido: document.getElementById('conyuge_segundo_apellido').value,
-                tipo_documento: document.getElementById('conyuge_tipo_documento').value,
-                numero_documento: document.getElementById('conyuge_numero_documento').value,
-                fecha_nacimiento: document.getElementById('conyuge_fecha_nacimiento').value,
-                lugar_nacimiento: document.getElementById('conyuge_lugar_nacimiento').value,
-                empresa: document.getElementById('conyuge_empresa').value,
-                antiguedad: document.getElementById('conyuge_antiguedad').value,
-                cargo: document.getElementById('conyuge_cargo').value,
-                ciudad_residencia: document.getElementById('conyuge_ciudad_residencia').value,
-                direccion: document.getElementById('conyuge_direccion').value,
-                celular: document.getElementById('conyuge_celular').value,
-                correo: document.getElementById('conyuge_correo').value
+                primer_nombre_conyuge: document.getElementById('conyuge_primer_nombre').value,
+                segundo_nombre_conyuge: document.getElementById('conyuge_segundo_nombre').value,
+                primer_apellido_conyuge: document.getElementById('conyuge_primer_apellido').value,
+                segundo_apellido_conyuge: document.getElementById('conyuge_segundo_apellido').value,
+                tipo_documento_conyuge: document.getElementById('conyuge_tipo_documento').value,
+                numero_documento_conyuge: document.getElementById('conyuge_numero_documento').value,
+                fecha_nacimiento_conyuge: document.getElementById('conyuge_fecha_nacimiento').value,
+                lugar_nacimiento_conyuge: document.getElementById('conyuge_lugar_nacimiento').value,
+                empresa_conyuge: document.getElementById('conyuge_empresa').value,
+                antiguedad_conyuge: document.getElementById('conyuge_antiguedad').value,
+                cargo_conyuge: document.getElementById('conyuge_cargo').value,
+                ciudad_residencia_conyuge: document.getElementById('conyuge_ciudad_residencia').value,
+                direccion_conyuge: document.getElementById('conyuge_direccion').value,
+                celular_conyuge: document.getElementById('conyuge_celular').value,
+                correo_conyuge: document.getElementById('conyuge_correo').value
             };
 
             formData.append('datos_conyuge', JSON.stringify(conyugeData));
 
             // Datos Apoderado
             const apoderadoData = {
-                primer_nombre: document.getElementById('natural_apoderado_primer_nombre').value,
-                segundo_nombre: document.getElementById('natural_apoderado_segundo_nombre').value,
-                primer_apellido: document.getElementById('natural_apoderado_primer_apellido').value,
-                segundo_apellido: document.getElementById('natural_apoderado_segundo_apellido').value,
-                tipo_documento: document.getElementById('natural_apoderado_tipo_documento').value,
-                numero_documento: document.getElementById('natural_apoderado_numero_documento').value,
-                fecha_nacimiento: document.getElementById('natural_apoderado_fecha_nacimiento').value,
-                lugar_nacimiento: document.getElementById('natural_apoderado_lugar_nacimiento').value,
-                empresa: document.getElementById('natural_apoderado_empresa').value,
-                antiguedad: document.getElementById('natural_apoderado_antiguedad').value,
-                cargo: document.getElementById('natural_apoderado_cargo').value,
-                ciudad_residencia: document.getElementById('natural_apoderado_ciudad_residencia').value,
-                direccion: document.getElementById('natural_apoderado_direccion').value,
-                celular: document.getElementById('natural_apoderado_celular').value,
-                correo: document.getElementById('natural_apoderado_correo').value
+                primer_nombre_apoderado: document.getElementById('natural_apoderado_primer_nombre').value,
+                segundo_nombre_apoderado: document.getElementById('natural_apoderado_segundo_nombre').value,
+                primer_apellido_apoderado: document.getElementById('natural_apoderado_primer_apellido').value,
+                segundo_apellido_apoderado: document.getElementById('natural_apoderado_segundo_apellido').value,
+                tipo_documento_apoderado: document.getElementById('natural_apoderado_tipo_documento').value,
+                numero_documento_apoderado: document.getElementById('natural_apoderado_numero_documento').value,
+                fecha_nacimiento_apoderado: document.getElementById('natural_apoderado_fecha_nacimiento').value,
+                lugar_nacimiento_apoderado: document.getElementById('natural_apoderado_lugar_nacimiento').value,
+                empresa_apoderado: document.getElementById('natural_apoderado_empresa').value,
+                antiguedad_apoderado: document.getElementById('natural_apoderado_antiguedad').value,
+                cargo_apoderado: document.getElementById('natural_apoderado_cargo').value,
+                ciudad_residencia_apoderado: document.getElementById('natural_apoderado_ciudad_residencia').value,
+                direccion_apoderado: document.getElementById('natural_apoderado_direccion').value,
+                celular_apoderado: document.getElementById('natural_apoderado_celular').value,
+                correo_apoderado: document.getElementById('natural_apoderado_correo').value
             };
             formData.append('datos_apoderado', JSON.stringify(apoderadoData));
 
@@ -491,26 +491,26 @@ function populateSelect(selectId, optionsData) {
             const actividadType = document.querySelector('input[name="actividad_economica"]:checked').value;
             if (actividadType === 'asalariado') {
                 const asalariadoData = {
-                    empresa: document.getElementById('natural_empresa').value,
-                    ciudad_empresa: document.getElementById('natural_ciudad_empresa').value,
-                    direccion_empresa: document.getElementById('natural_direccion_empresa').value,
-                    telefono_empresa: document.getElementById('natural_telefono_empresa').value,
-                    actividad_economica: document.getElementById('natural_actividad_economica').value,
-                    antiguedad: document.getElementById('natural_antiguedad').value,
-                    cargo: document.getElementById('natural_cargo').value,
-                    ingresos_mensuales: document.getElementById('natural_ingresos_asalariado').value
+                    empresa_asalariado: document.getElementById('natural_empresa').value,
+                    ciudad_empresa_asalariado: document.getElementById('natural_ciudad_empresa').value,
+                    direccion_empresa_asalariado: document.getElementById('natural_direccion_empresa').value,
+                    telefono_empresa_asalariado: document.getElementById('natural_telefono_empresa').value,
+                    actividad_economica_asalariado: document.getElementById('natural_actividad_economica').value,
+                    antiguedad_asalariado: document.getElementById('natural_antiguedad').value,
+                    cargo_asalariado: document.getElementById('natural_cargo').value,
+                    ingresos_mensuales_asalariado: document.getElementById('natural_ingresos_asalariado').value
                 };
                 formData.append('actividad_economica_asalariado', JSON.stringify(asalariadoData));
             } else {
                 const noAsalariadoData = {
-                    negocio_nombre: document.getElementById('natural_negocio_nombre').value,
-                    negocio_ciudad: document.getElementById('natural_negocio_ciudad').value,
-                    negocio_direccion: document.getElementById('natural_negocio_direccion').value,
-                    negocio_celular: document.getElementById('natural_negocio_celular').value,
-                    actividad_economica: document.getElementById('natural_actividad').value,
-                    antiguedad: document.getElementById('natural_antiguedad').value,
-                    cargo: document.getElementById('natural_cargo').value,
-                    correo: document.getElementById('natural_correo').value
+                    negocio_nombre_no_asalariado: document.getElementById('natural_negocio_nombre').value,
+                    negocio_ciudad_no_asalariado: document.getElementById('natural_negocio_ciudad').value,
+                    negocio_direccion_no_asalariado: document.getElementById('natural_negocio_direccion').value,
+                    negocio_celular_no_asalariado: document.getElementById('natural_negocio_celular').value,
+                    actividad_economica_no_asalariado: document.getElementById('natural_actividad').value,
+                    antiguedad_no_asalariado: document.getElementById('natural_antiguedad').value,
+                    cargo_no_asalariado: document.getElementById('natural_cargo').value,
+                    correo_no_asalariado: document.getElementById('natural_correo').value
                 };
                 formData.append('actividad_economica_no_asalariado', JSON.stringify(noAsalariadoData));
             }
