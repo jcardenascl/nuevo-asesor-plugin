@@ -97,8 +97,8 @@
                          <label for="natural_sexo">Sexo</label>
                          <select id="natural_sexo" name="natural_sexo" required>
                             <option value="">Seleccione</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="femenino">Femenino</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
                          </select>
                       </div>
                       <div class="form-group">
@@ -129,10 +129,11 @@
                          <label for="natural_estado_civil">Estado civil</label>
                          <select id="natural_estado_civil" name="natural_estado_civil" required>
                             <option value="">Seleccione</option>
-                            <option value="Soltero">Soltero</option>
-                            <option value="Casado">Casado</option>
-                            <option value="Divorciado">Divorciado</option>
-                            <option value="Viudo">Viudo</option>
+                            <option value="S">Soltero</option>
+                            <option value="C">Casado</option>
+                            <option value="UL">Union Libre</option>
+                            <option value="D">Divorciado</option>
+                            <option value="V">Viudo</option>
                          </select>
                       </div>
                       <div class="form-group">
@@ -143,18 +144,22 @@
                          <label for="natural_tipo_vivienda">Tipo de vivienda</label>
                          <select id="natural_tipo_vivienda" name="natural_tipo_vivienda" required>
                             <option value="">Seleccione</option>
-                            <option value="arrendada">Arrendada</option>
-                            <option value="propia">Propia</option>
-                            <option value="familiar">Familiar</option>
+                            <option value="A">Arrendada</option>
+                            <option value="P">Propia</option>
+                            <option value="F">Familiar</option>
                          </select>
                       </div>
                       <div class="form-group">
                          <label for="natural_nivel_estudio">Nivel de estudio</label>
                          <select id="natural_nivel_estudio" name="natural_nivel_estudio" required>
                             <option value="">Seleccione</option>
-                            <option value="basica">Educación Básica</option>
-                            <option value="media">Educación Media</option>
-                            <option value="superior">Educación Superior</option>
+                            <option value="P">Primaria</option>
+                            <option value="S">Bachillerato</option>
+                            <option value="TE">Técnico</option>
+                            <option value="T">Tecnólogo</option>
+                            <option value="U">Universitario</option>
+                            <option value="PO">Especialista</option>
+
                          </select>
                       </div>
                       <!-- Fila 6 -->
@@ -168,8 +173,8 @@
                          <label for="natural_tipo_cuenta">Tipo de cuenta</label>
                          <select id="natural_tipo_cuenta" name="natural_tipo_cuenta" required>
                             <option value="">Seleccione</option>
-                            <option value="corriente">Corriente</option>
-                            <option value="ahorro">Ahorro</option>
+                            <option value="C">Corriente</option>
+                            <option value="A">Ahorro</option>
                          </select>
                       </div>
                       <div class="form-group">
