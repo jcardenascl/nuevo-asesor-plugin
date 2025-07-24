@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Definir constantes del plugin
-define( 'MFA_VERSION', '1.0.3' );
+define( 'MFA_VERSION', '1.0.7' );
 define( 'MFA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MFA_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'MFA_MIN_PHP_VERSION', '7.2' );
