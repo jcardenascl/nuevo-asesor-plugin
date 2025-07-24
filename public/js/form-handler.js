@@ -118,8 +118,24 @@ function populateSelect(selectId, optionsData) {
 
         // Mostrar/ocultar datos cónyuge
         document.getElementById('natural_estado_civil').addEventListener('change', function () {
-            document.querySelector('.conyuge-section').style.display =
-                this.value === 'C' ? 'block' : 'none';
+            const esCasado = this.value === 'C';
+            const conyugeSection = document.querySelector('.conyuge-section');
+            const conyugeFields = document.querySelectorAll('[data-conyuge]');
+
+            if (esCasado) {
+                conyugeSection.style.display = 'block';
+                conyugeFields.forEach(field => field.setAttribute('required', 'required'));
+            } else {
+                conyugeSection.style.display = 'none';
+                conyugeFields.forEach(field => {
+                    field.removeAttribute('required');
+                    if (field.tagName === 'SELECT') {
+                        field.selectedIndex = 0;
+                    } else {
+                        field.value = '';
+                    }
+                });
+            }
         });
 
         document.getElementById('button_activate_apoderado').addEventListener('click', function () {
