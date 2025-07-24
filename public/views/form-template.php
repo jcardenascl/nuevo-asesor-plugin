@@ -188,6 +188,10 @@
                          </select>
                       </div>
                    </div>
+                    <div class="content-btn" style="margin-top: 20px;">
+                        <button type="button" id="button_activate_apoderado">Registrar Apoderado</button>
+                        <button type="button" id="button_remove_apoderado">Remover Apoderado</button>
+                    </div>
                 </fieldset>
 
                 <!-- Datos Cónyuge -->
@@ -197,25 +201,25 @@
                         <!-- Fila 1 -->
                         <div class="form-group">
                             <label for="conyuge_primer_nombre">Primer nombre:</label>
-                            <input type="text" id="conyuge_primer_nombre" name="conyuge_primer_nombre" placeholder="Primer nombre">
+                            <input data-conyuge type="text" id="conyuge_primer_nombre" name="conyuge_primer_nombre" placeholder="Primer nombre">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_segundo_nombre">Segundo nombre:</label>
-                            <input type="text" id="conyuge_segundo_nombre" name="conyuge_segundo_nombre" placeholder="Segundo nombre">
+                            <input data-conyuge  type="text" id="conyuge_segundo_nombre" name="conyuge_segundo_nombre" placeholder="Segundo nombre">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_primer_apellido">Primer apellido:</label>
-                            <input type="text" id="conyuge_primer_apellido" name="conyuge_primer_apellido" placeholder="Primer apellido">
+                            <input data-conyuge  type="text" id="conyuge_primer_apellido" name="conyuge_primer_apellido" placeholder="Primer apellido">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_segundo_apellido">Segundo apellido:</label>
-                            <input type="text" id="conyuge_segundo_apellido" name="conyuge_segundo_apellido" placeholder="Segundo apellido">
+                            <input data-conyuge  type="text" id="conyuge_segundo_apellido" name="conyuge_segundo_apellido" placeholder="Segundo apellido">
                         </div>
 
                         <!-- Fila 2 -->
                         <div class="form-group">
                             <label for="conyuge_tipo_documento">Tipo de identificación:</label>
-                            <select id="conyuge_tipo_documento" name="conyuge_tipo_documento">
+                            <select data-conyuge  id="conyuge_tipo_documento" name="conyuge_tipo_documento">
                                 <option value="">Seleccione</option>
                                 <option value="C.C.">Cédula de Ciudadanía</option>
                                 <option value="C.E.">Cédula de Extranjería</option>
@@ -223,15 +227,15 @@
                         </div>
                         <div class="form-group">
                             <label for="conyuge_numero_documento">Número de identificación:</label>
-                            <input type="text" id="conyuge_numero_documento" name="conyuge_numero_documento" placeholder="Número de documento">
+                            <input data-conyuge  type="text" id="conyuge_numero_documento" name="conyuge_numero_documento" placeholder="Número de documento">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_fecha_nacimiento">Fecha de nacimiento:</label>
-                            <input type="date" id="conyuge_fecha_nacimiento" name="conyuge_fecha_nacimiento">
+                            <input data-conyuge  type="date" id="conyuge_fecha_nacimiento" name="conyuge_fecha_nacimiento">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_lugar_nacimiento">Lugar de nacimiento</label>
-                            <select id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento" required>
+                            <select data-conyuge  id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento">
                                 <option value="">Seleccione</option>
                             </select>
                         </div>
@@ -239,41 +243,39 @@
                         <!-- Fila 3 -->
                         <div class="form-group">
                             <label for="conyuge_empresa">Empresa donde trabaja:</label>
-                            <input type="text" id="conyuge_empresa" name="conyuge_empresa" placeholder="Empresa">
+                            <input data-conyuge  type="text" id="conyuge_empresa" name="conyuge_empresa" placeholder="Empresa">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_antiguedad">Antigüedad (años):</label>
-                            <input type="number" id="conyuge_antiguedad" name="conyuge_antiguedad" min="0" placeholder="Años">
+                            <input data-conyuge  type="number" id="conyuge_antiguedad" name="conyuge_antiguedad" min="0" placeholder="Años">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_cargo">Cargo u ocupación:</label>
-                            <input type="text" id="conyuge_cargo" name="conyuge_cargo" placeholder="Cargo">
+                            <input data-conyuge  type="text" id="conyuge_cargo" name="conyuge_cargo" placeholder="Cargo">
                         </div>
                         <div></div>
 
                         <!-- Fila 4 -->
                         <div class="form-group">
                             <label for="conyuge_ciudad_residencia">Ciudad de residencia:</label>
-                            <select id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia" required>
+                            <select data-conyuge id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia">
                                 <option value="">Seleccione</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="conyuge_direccion">Dirección de residencia:</label>
-                            <input type="text" id="conyuge_direccion" name="conyuge_direccion" placeholder="Dirección">
+                            <input data-conyuge  type="text" id="conyuge_direccion" name="conyuge_direccion" placeholder="Dirección">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_celular">Celular:</label>
-                            <input type="tel" id="conyuge_celular" name="conyuge_celular" placeholder="Celular" pattern="[0-9]{10}">
+                            <input data-conyuge  type="tel" id="conyuge_celular" name="conyuge_celular" placeholder="Celular" pattern="[0-9]{10}">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_correo">Correo electrónico:</label>
-                            <input type="email" id="conyuge_correo" name="conyuge_correo" placeholder="Correo">
+                            <input data-conyuge  type="email" id="conyuge_correo" name="conyuge_correo" placeholder="Correo">
                         </div>
                     </div>
                 </fieldset>
-
-                <button type="button" id="button_activate_apoderado">Registrar Apoderado</button>
 
                 <!-- Datos Apoderado -->
                 <fieldset class="apoderado-section" style="display: none;">
