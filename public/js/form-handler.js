@@ -124,7 +124,11 @@ function populateSelect(selectId, optionsData) {
 
             if (esCasado) {
                 conyugeSection.style.display = 'block';
-                conyugeFields.forEach(field => field.setAttribute('required', 'required'));
+                conyugeFields.forEach(field => {
+                    if (!field.hasAttribute('data-optional')) {
+                        field.setAttribute('required', 'required');
+                    }
+                });
             } else {
                 conyugeSection.style.display = 'none';
                 conyugeFields.forEach(field => {
@@ -141,18 +145,26 @@ function populateSelect(selectId, optionsData) {
         document.getElementById('button_activate_apoderado').addEventListener('click', function () {
             const section = document.querySelector('.apoderado-section');
             const apoderadoFields = section.querySelectorAll('[data-apoderado]');
-
+            const removeButton = document.getElementById('button_remove_apoderado');
             const isVisible = section.style.display === 'block';
 
             // Toggle visibility
             section.style.display = isVisible ? 'none' : 'block';
+            removeButton.style.display = isVisible ? 'none' : 'inline-block'; // Mostrar/ocultar remover
 
             // Habilita o deshabilita los "required"
             apoderadoFields.forEach(field => {
                 if (isVisible) {
                     field.removeAttribute('required');
+                    if (field.tagName === 'SELECT') {
+                        field.selectedIndex = 0;
+                    } else {
+                        field.value = '';
+                    }
                 } else {
-                    field.setAttribute('required', 'required');
+                    if (!field.hasAttribute('data-optional')) {
+                        field.setAttribute('required', 'required');
+                    }
                 }
             });
         });

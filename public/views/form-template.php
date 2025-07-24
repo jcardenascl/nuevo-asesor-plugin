@@ -189,8 +189,8 @@
                       </div>
                    </div>
                     <div class="content-btn" style="margin-top: 20px;">
-                        <button type="button" id="button_activate_apoderado">Registrar Apoderado</button>
-                        <button type="button" id="button_remove_apoderado">Remover Apoderado</button>
+                        <button type="button" id="button_activate_apoderado" class="add-sucursal" >Registrar Apoderado</button>
+                        <button type="button" id="button_remove_apoderado" class="remove-sucursal" style="display: none;">Remover Apoderado</button>
                     </div>
                 </fieldset>
 
@@ -205,7 +205,7 @@
                         </div>
                         <div class="form-group">
                             <label for="conyuge_segundo_nombre">Segundo nombre:</label>
-                            <input data-conyuge  type="text" id="conyuge_segundo_nombre" name="conyuge_segundo_nombre" placeholder="Segundo nombre">
+                            <input data-conyuge  data-optional type="text" id="conyuge_segundo_nombre" name="conyuge_segundo_nombre" placeholder="Segundo nombre">
                         </div>
                         <div class="form-group">
                             <label for="conyuge_primer_apellido">Primer apellido:</label>
@@ -213,7 +213,7 @@
                         </div>
                         <div class="form-group">
                             <label for="conyuge_segundo_apellido">Segundo apellido:</label>
-                            <input data-conyuge  type="text" id="conyuge_segundo_apellido" name="conyuge_segundo_apellido" placeholder="Segundo apellido">
+                            <input data-conyuge data-optional type="text" id="conyuge_segundo_apellido" name="conyuge_segundo_apellido" placeholder="Segundo apellido">
                         </div>
 
                         <!-- Fila 2 -->
@@ -284,24 +284,24 @@
                         <!-- Fila 1 -->
                         <div class="form-group">
                             <label for="natural_apoderado_primer_nombre">Primer nombre:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_primer_nombre" name="natural_apoderado_primer_nombre" placeholder="Primer nombre">
+                            <input data-apoderado type="text" id="natural_apoderado_primer_nombre" name="natural_apoderado_primer_nombre" placeholder="Primer nombre">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_segundo_nombre">Segundo nombre:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_segundo_nombre" name="natural_apoderado_segundo_nombre" placeholder="Segundo nombre">
+                            <input data-apoderado data-optional type="text" id="natural_apoderado_segundo_nombre" name="natural_apoderado_segundo_nombre" placeholder="Segundo nombre">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_primer_apellido">Primer apellido:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_primer_apellido" name="natural_apoderado_primer_apellido" placeholder="Primer apellido">
+                            <input data-apoderado type="text" id="natural_apoderado_primer_apellido" name="natural_apoderado_primer_apellido" placeholder="Primer apellido">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_segundo_apellido">Segundo apellido:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_segundo_apellido" name="natural_apoderado_segundo_apellido" placeholder="Segundo apellido">
+                            <input data-apoderado data-optional type="text" id="natural_apoderado_segundo_apellido" name="natural_apoderado_segundo_apellido" placeholder="Segundo apellido">
                         </div>
                         <!-- Fila 2 -->
                         <div class="form-group">
                             <label for="natural_apoderado_tipo_documento">Tipo de identificación:</label>
-                            <select data-apoderado required id="natural_apoderado_tipo_documento" name="natural_apoderado_tipo_documento">
+                            <select data-apoderado id="natural_apoderado_tipo_documento" name="natural_apoderado_tipo_documento">
                                 <option value="">Tipo de documento</option>
                                 <option value="C.C.">Cédula de Ciudadanía</option>
                                 <option value="C.E.">Cédula de Extranjería</option>
@@ -309,51 +309,51 @@
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_numero_documento">Número de identificación:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_numero_documento" name="natural_apoderado_numero_documento" placeholder="Número de documento">
+                            <input data-apoderado type="text" id="natural_apoderado_numero_documento" name="natural_apoderado_numero_documento" placeholder="Número de documento">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_fecha_nacimiento">Fecha de nacimiento:</label>
-                            <input data-apoderado required type="date" id="natural_apoderado_fecha_nacimiento" name="natural_apoderado_fecha_nacimiento">
+                            <input data-apoderado type="date" id="natural_apoderado_fecha_nacimiento" name="natural_apoderado_fecha_nacimiento">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_lugar_nacimiento">Lugar de nacimiento</label>
-                            <select data-apoderado required id="natural_apoderado_lugar_nacimiento" name="natural_apoderado_lugar_nacimiento" required>
+                            <select data-apoderado id="natural_apoderado_lugar_nacimiento" name="natural_apoderado_lugar_nacimiento" required>
                                 <option value="">Seleccione</option>
                             </select>
                         </div>
                         <!-- Fila 3 -->
                         <div class="form-group">
                             <label for="natural_apoderado_empresa">Empresa donde trabaja:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_empresa" name="natural_apoderado_empresa" placeholder="Empresa">
+                            <input data-apoderado type="text" id="natural_apoderado_empresa" name="natural_apoderado_empresa" placeholder="Empresa">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_antiguedad">Antigüedad (años):</label>
-                            <input data-apoderado required type="number" id="natural_apoderado_antiguedad" name="natural_apoderado_antiguedad" min="0" placeholder="Años">
+                            <input data-apoderado type="number" id="natural_apoderado_antiguedad" name="natural_apoderado_antiguedad" min="0" placeholder="Años">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_cargo">Cargo u ocupación:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_cargo" name="natural_apoderado_cargo" placeholder="Cargo">
+                            <input data-apoderado type="text" id="natural_apoderado_cargo" name="natural_apoderado_cargo" placeholder="Cargo">
                         </div>
                         <div></div>
                         <!-- Espacio vacío -->
                         <!-- Fila 4 -->
                         <div class="form-group">
                             <label for="natural_apoderado_ciudad_residencia">Ciudad de residencia:</label>
-                            <select data-apoderado required id="natural_apoderado_ciudad_residencia" name="natural_apoderado_ciudad_residencia" required>
+                            <select data-apoderado id="natural_apoderado_ciudad_residencia" name="natural_apoderado_ciudad_residencia" required>
                                 <option value="">Seleccione</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_direccion">Dirección de residencia:</label>
-                            <input data-apoderado required type="text" id="natural_apoderado_direccion" name="natural_apoderado_direccion" placeholder="Dirección">
+                            <input data-apoderado type="text" id="natural_apoderado_direccion" name="natural_apoderado_direccion" placeholder="Dirección">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_celular">Celular:</label>
-                            <input data-apoderado required type="tel" id="natural_apoderado_celular" name="natural_apoderado_celular" placeholder="Celular" pattern="[0-9]{10}">
+                            <input data-apoderado type="tel" id="natural_apoderado_celular" name="natural_apoderado_celular" placeholder="Celular" pattern="[0-9]{10}">
                         </div>
                         <div class="form-group">
                             <label for="natural_apoderado_correo">Correo electrónico:</label>
-                            <input data-apoderado required type="email" id="natural_apoderado_correo" name="natural_apoderado_correo" placeholder="Correo">
+                            <input data-apoderado type="email" id="natural_apoderado_correo" name="natural_apoderado_correo" placeholder="Correo">
                         </div>
                     </div>
                 </fieldset>
