@@ -235,7 +235,7 @@
                         </div>
                         <div class="form-group">
                             <label for="conyuge_lugar_nacimiento">Lugar de nacimiento</label>
-                            <select data-conyuge  id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento" required>
+                            <select data-conyuge  id="conyuge_lugar_nacimiento" name="conyuge_lugar_nacimiento">
                                 <option value="">Seleccione</option>
                             </select>
                         </div>
@@ -258,7 +258,7 @@
                         <!-- Fila 4 -->
                         <div class="form-group">
                             <label for="conyuge_ciudad_residencia">Ciudad de residencia:</label>
-                            <select data-conyuge id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia" required>
+                            <select data-conyuge id="conyuge_ciudad_residencia" name="conyuge_ciudad_residencia">
                                 <option value="">Seleccione</option>
                             </select>
                         </div>
