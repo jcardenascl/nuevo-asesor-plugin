@@ -122,6 +122,25 @@ function populateSelect(selectId, optionsData) {
                 this.value === 'C' ? 'block' : 'none';
         });
 
+        document.getElementById('button_activate_apoderado').addEventListener('click', function () {
+            const section = document.querySelector('.apoderado-section');
+            const apoderadoFields = section.querySelectorAll('[data-apoderado]');
+
+            const isVisible = section.style.display === 'block';
+
+            // Toggle visibility
+            section.style.display = isVisible ? 'none' : 'block';
+
+            // Habilita o deshabilita los "required"
+            apoderadoFields.forEach(field => {
+                if (isVisible) {
+                    field.removeAttribute('required');
+                } else {
+                    field.setAttribute('required', 'required');
+                }
+            });
+        });
+
         // Alternar entre actividad económica
         document.querySelectorAll('input[name="actividad_economica"]').forEach(radio => {
             radio.addEventListener('change', function () {
