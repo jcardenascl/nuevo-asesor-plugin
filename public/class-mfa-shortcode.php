@@ -33,30 +33,30 @@ class MFA_Shortcode {
                 MFA_VERSION
             );
 
-            wp_enqueue_script(
-                'mfa-api-service',
-                MFA_PLUGIN_URL . 'public/js/api-service.js',
-                [], // No tiene dependencias directas de otros scripts nuestros aquí
-                MFA_VERSION,
-                true // Cargar en el footer
-            );
-            // Informa a WordPress que este script es un módulo ES6
-            wp_script_add_data( 'mfa-api-service', 'type', 'module' );
-
-
-            wp_enqueue_script(
-                'mfa-form-handler',
-                MFA_PLUGIN_URL . 'public/js/form-handler.js',
-                ['mfa-api-service'], // Depende de api-service
-                MFA_VERSION,
-                true
-            );
-            wp_script_add_data( 'mfa-form-handler', 'type', 'module' );
+//             wp_enqueue_script(
+//                 'mfa-api-service',
+//                 MFA_PLUGIN_URL . 'public/js/api-service.js',
+//                 [], // No tiene dependencias directas de otros scripts nuestros aquí
+//                 MFA_VERSION,
+//                 true // Cargar en el footer
+//             );
+//             // Informa a WordPress que este script es un módulo ES6
+//             wp_script_add_data( 'mfa-api-service', 'type', 'module' );
+//
+//
+//             wp_enqueue_script(
+//                 'mfa-form-handler',
+//                 MFA_PLUGIN_URL . 'public/js/form-handler.js',
+//                 ['mfa-api-service'], // Depende de api-service
+//                 MFA_VERSION,
+//                 true
+//             );
+//             wp_script_add_data( 'mfa-form-handler', 'type', 'module' );
 
             wp_enqueue_script(
                 'mfa-main-js', // Handle del script principal
                 MFA_PLUGIN_URL . 'public/js/main.js',
-                ['mfa-form-handler'], // Depende de form-handler
+                [], // Depende de form-handler
                 MFA_VERSION,
                 true
             );
