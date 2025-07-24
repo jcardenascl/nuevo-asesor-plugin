@@ -271,9 +271,11 @@
                             <input type="email" id="conyuge_correo" name="conyuge_correo" placeholder="Correo">
                         </div>
                     </div>
+                    <div class="content-btn" style="margin-top: 20px;">
+                        <button type="button" id="button_activate_apoderado">Registrar Apoderado</button>
+                        <button type="button" id="button_remove_apoderado">Remover Apoderado</button>
+                    </div>
                 </fieldset>
-
-                <button type="button" id="button_activate_apoderado">Registrar Apoderado</button>
 
                 <!-- Datos Apoderado -->
                 <fieldset class="apoderado-section" style="display: none;">

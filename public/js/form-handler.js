@@ -141,6 +141,25 @@ function populateSelect(selectId, optionsData) {
             });
         });
 
+        const removeBtn = document.getElementById('button_remove_apoderado');
+        if (removeBtn) {
+            removeBtn.addEventListener('click', () => {
+                const section = document.querySelector('.apoderado-section');
+                const apoderadoFields = section.querySelectorAll('[data-apoderado]');
+
+                apoderadoFields.forEach(field => {
+                    field.removeAttribute('required');
+                    if (field.tagName === 'SELECT') {
+                        field.selectedIndex = 0;
+                    } else {
+                        field.value = '';
+                    }
+                });
+
+                section.style.display = 'none';
+            });
+        }
+
         // Alternar entre actividad económica
         document.querySelectorAll('input[name="actividad_economica"]').forEach(radio => {
             radio.addEventListener('change', function () {
