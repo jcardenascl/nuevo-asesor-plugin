@@ -189,8 +189,8 @@
                       </div>
                    </div>
                     <div class="content-btn" style="margin-top: 20px;">
-                        <button type="button" id="button_activate_apoderado" class="add-sucursal" >Registrar Apoderado</button>
-                        <button type="button" id="button_remove_apoderado" class="remove-sucursal" style="display: none;">Remover Apoderado</button>
+                        <button type="button" id="button_activate_apoderado" class="add-apoderado" >Registrar Apoderado</button>
+                        <button type="button" id="button_remove_apoderado" class="remove-apoderado" style="display: none;">Remover Apoderado</button>
                     </div>
                 </fieldset>
 
