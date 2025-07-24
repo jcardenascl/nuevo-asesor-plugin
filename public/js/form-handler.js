@@ -135,6 +135,8 @@ function populateSelect(selectId, optionsData) {
                     field.removeAttribute('required');
                     if (field.tagName === 'SELECT') {
                         field.selectedIndex = 0;
+                    } else if (field.type === 'checkbox' || field.type === 'radio') {
+                        field.checked = false;
                     } else {
                         field.value = '';
                     }
@@ -146,25 +148,37 @@ function populateSelect(selectId, optionsData) {
             const section = document.querySelector('.apoderado-section');
             const apoderadoFields = section.querySelectorAll('[data-apoderado]');
             const removeButton = document.getElementById('button_remove_apoderado');
-            const isVisible = section.style.display === 'block';
 
-            // Toggle visibility
-            section.style.display = isVisible ? 'none' : 'block';
-            removeButton.style.display = isVisible ? 'none' : 'inline-block'; // Mostrar/ocultar remover
+            // Mostrar sección y botón de remover
+            section.style.display = 'block';
+            removeButton.style.display = 'inline-block';
 
-            // Habilita o deshabilita los "required"
+            // Agregar required a los campos
             apoderadoFields.forEach(field => {
-                if (isVisible) {
-                    field.removeAttribute('required');
-                    if (field.tagName === 'SELECT') {
-                        field.selectedIndex = 0;
-                    } else {
-                        field.value = '';
-                    }
+                if (!field.hasAttribute('data-optional')) {
+                    field.setAttribute('required', 'required');
+                }
+            });
+        });
+
+        document.getElementById('button_remove_apoderado').addEventListener('click', function () {
+            const section = document.querySelector('.apoderado-section');
+            const apoderadoFields = section.querySelectorAll('[data-apoderado]');
+            const removeButton = this;
+
+            // Ocultar sección y botón de remover
+            section.style.display = 'none';
+            removeButton.style.display = 'none';
+
+            // Limpiar campos y quitar required
+            apoderadoFields.forEach(field => {
+                field.removeAttribute('required');
+                if (field.tagName === 'SELECT') {
+                    field.selectedIndex = 0;
+                } else if (field.type === 'checkbox' || field.type === 'radio') {
+                    field.checked = false;
                 } else {
-                    if (!field.hasAttribute('data-optional')) {
-                        field.setAttribute('required', 'required');
-                    }
+                    field.value = '';
                 }
             });
         });

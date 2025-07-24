@@ -488,7 +488,7 @@
     }
 
     .remove-apoderado {
-        background: #ff4444;
+        background: #ff4444 !important;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -498,7 +498,7 @@
     }
 
     .add-apoderado {
-        background: #4CAF50;
+        background: #4CAF50 !important;
         color: white;
         border: none;
         padding: 10px 20px;
