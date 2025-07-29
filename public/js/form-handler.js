@@ -745,7 +745,7 @@ function populateSelect(selectId, optionsData) {
                     const productoData = {};
 
                     inputs.forEach(input => {
-                        const field = input.name.split('][')[1].replace('producto_', '');
+                        const field = input.name.replace('producto_', '');
                         productoData[field] = input.type === 'number' ? parseFloat(input.value) : input.value;
                     });
 
