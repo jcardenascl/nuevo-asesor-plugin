@@ -49,6 +49,7 @@ class MFA_API_Handler {
                 'username' => $this->api_options['api_username'] ?? '',
                 'password' => $this->api_options['api_password'] ?? '',
                 'rol' => 'WP',
+				'captchaToken' => 'XXXX.DUMMY.TOKEN.XXXX',
             ];
 
             if ( empty($credentials['username']) || empty($credentials['password']) ) {
